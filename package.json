@@ -1,0 +1,44 @@
+{
+    "name": "@blog-vir/mono-root",
+    "homepage": "https://github.com/electrovir/blog-vir",
+    "bugs": {
+        "url": "https://github.com/electrovir/blog-vir/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/electrovir/blog-vir.git"
+    },
+    "author": {
+        "name": "electrovir",
+        "url": "https://github.com/electrovir"
+    },
+    "version": "0.0.0",
+    "private": true,
+    "license": "(MIT OR CC0-1.0)",
+    "sideEffects": false,
+    "type": "module",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "compile": "virmator compile",
+        "format": "virmator format",
+        "lint": "virmator lint fix",
+        "publish": "virmator publish npm run test:all",
+        "test": "virmator test web",
+        "test:all": "npm run compile && runstorm --names tests,spelling,format,docs,deps,lint \"npm run test:coverage\" \"npm run test:spelling\" \"npm run test:format\" \"npm run test:docs\" \"npm run test:deps\" \"npm run test:lint\"",
+        "test:coverage": "npm run test coverage",
+        "test:deps": "virmator deps check",
+        "test:docs": "virmator docs check",
+        "test:format": "virmator format check",
+        "test:lint": "virmator lint",
+        "test:spelling": "virmator spellcheck",
+        "test:update": "npm test update"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "devDependencies": {
+        "virmator": "^14.21.1"
+    }
+}
