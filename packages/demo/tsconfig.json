@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "./dist/",
-        "rootDir": "./src/",
-        "types": ["node"]
+        "rootDir": "./src/"
     },
     "exclude": [
         "./configs/",
