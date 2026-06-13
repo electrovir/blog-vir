@@ -25,7 +25,7 @@
         "compile": "virmator compile",
         "docs": "virmator docs",
         "start": "virmator frontend",
-        "test": "virmator test web",
+        "test": "virmator test node",
         "test:coverage": "npm run test coverage",
         "test:docs": "virmator docs check",
         "test:update": "npm test update"
@@ -33,6 +33,7 @@
     "dependencies": {
         "@augment-vir/assert": "^31.71.4",
         "@augment-vir/common": "^31.71.4",
+        "@augment-vir/node": "^31.72.1",
         "date-vir": "^8.3.2",
         "element-vir": "*"
     },
