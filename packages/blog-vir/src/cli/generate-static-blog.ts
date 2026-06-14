@@ -6,7 +6,7 @@ import {
 } from '@augment-vir/common';
 import {writeJsonFile} from '@augment-vir/node';
 import {mkdir, rm} from 'node:fs/promises';
-import {join} from 'node:path';
+import {join, relative} from 'node:path';
 import {blogPaths, createBlogPostJsonPath, createBlogPostPageJsonPath} from '../data/blog-paths.js';
 import {
     type BlogIndex,
@@ -49,11 +49,11 @@ export async function generateStaticBlog({
         recursive: true,
     });
 
-    const fileNames = await listMarkdownFiles(postsDir);
+    const filePaths = await listMarkdownFiles(postsDir);
 
-    const parsed = await awaitedBlockingMap(fileNames, async (fileName) => {
-        const filePath = join(postsDir, fileName);
-        log.if(!!verbose).faint(`parsing '${fileName}'`);
+    const parsed = await awaitedBlockingMap(filePaths, async (filePath) => {
+        const relativeFilePath = relative(postsDir, filePath);
+        log.if(!!verbose).faint(`parsing '${relativeFilePath}'`);
         try {
             return await parseBlogPostFile(filePath);
         } catch (error) {
