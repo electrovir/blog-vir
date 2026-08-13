@@ -41,6 +41,7 @@
         "date-vir": "^9.0.0",
         "element-vir": "*",
         "marked": "^18.0.9",
+        "spa-router-vir": "^6.6.1",
         "theme-vir": "^28.25.1",
         "vira": "^31.29.0"
     },

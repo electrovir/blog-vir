@@ -77,9 +77,9 @@ export async function generateStaticBlog({
         }
     });
 
-    const sortedBlogPosts = parsed.toSorted((a, b) =>
-        b.post.postDate.localeCompare(a.post.postDate),
-    );
+    const sortedBlogPosts = parsed.toSorted((a, b) => {
+        return b.post.postDate.localeCompare(a.post.postDate);
+    });
     const tagPostSlugs = buildTagPostSlugs(sortedBlogPosts);
 
     await awaitedBlockingMap(sortedBlogPosts, async ({post}) => {

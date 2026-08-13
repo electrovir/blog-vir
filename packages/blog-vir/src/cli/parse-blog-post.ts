@@ -62,8 +62,8 @@ function extractHeadings(rawContent: string): BlogPostHeading[] {
 function stripHtml(input: string): string {
     return (
         input
-            // eslint-disable-next-line sonarjs/slow-regex
-            .replace(/<[^>]+>/g, ' ')
+            /* Excluding `<` from the tag body keeps this linear: a failed match cannot backtrack. */
+            .replace(/<[^<>]*>/g, ' ')
             .replace(/&nbsp;/g, ' ')
             .replace(/&amp;/g, '&')
             .replace(/&lt;/g, '<')
@@ -185,9 +185,9 @@ function addFrontmatterEntry({
             ...frontmatter,
             description: parsedValue,
         };
+    } else {
+        return frontmatter;
     }
-
-    return frontmatter;
 }
 
 function parseFrontmatter(rawText: string): {

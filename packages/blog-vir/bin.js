@@ -5,4 +5,8 @@ import {join} from 'node:path';
 
 const cliPath = join(import.meta.dirname, 'src', 'cli', 'blog-vir.script.ts');
 
-await runCliScript(cliPath, import.meta.filename, 'blog-vir');
+await runCliScript({
+    scriptPath: cliPath,
+    cliScriptFilePath: import.meta.filename,
+    binName: 'blog-vir',
+});

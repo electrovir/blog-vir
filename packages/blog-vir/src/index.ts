@@ -13,7 +13,7 @@ export * from './ui/elements/vir-blog-tag-page.element.js';
 export * from './ui/elements/vir-blog.element.js';
 export * from './ui/routing/blog-data-client.js';
 export * from './ui/routing/blog-route.js';
-export * from './ui/routing/router.js';
+export * from './ui/routing/blog-router.js';
 export * from './ui/util/blog-colors.js';
 export * from './ui/util/format-blog-date.js';
 export * from './ui/util/shared-styles.js';

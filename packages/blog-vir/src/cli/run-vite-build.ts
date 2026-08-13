@@ -75,8 +75,8 @@ export async function runVite({
  * at the first ancestor that contains a `configs/vite.config.ts` file.
  */
 export function findDefaultViteConfigPath(startPath: string): string | undefined {
-    const ancestor = findAncestor(resolve(startPath), (dir) =>
-        existsSync(join(dir, 'configs', 'vite.config.ts')),
-    );
+    const ancestor = findAncestor(resolve(startPath), (dir) => {
+        return existsSync(join(dir, 'configs', 'vite.config.ts'));
+    });
     return ancestor && join(ancestor, 'configs', 'vite.config.ts');
 }
