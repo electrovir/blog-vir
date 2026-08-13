@@ -8,10 +8,10 @@ export enum BlogVirMode {
 }
 
 export type ParsedBlogVirArgs = {
-    indexHtml: string;
-    postsDir: string;
-    staticDir: string;
-    viteConfig: string;
+    indexHtmlPath: string;
+    postsDirPath: string;
+    staticDirPath: string;
+    viteConfigPath: string;
     mode: BlogVirMode;
     verbose: boolean;
 };
@@ -76,13 +76,15 @@ export function parseBlogVirArgs(
         },
     );
 
-    const indexHtml = resolve(parsed.index || join('src', 'index.html'));
+    const indexHtmlPath = resolve(parsed.index || join('src', 'index.html'));
 
     return {
-        indexHtml,
-        postsDir: resolve(parsed.posts || './posts/'),
-        staticDir: resolve(parsed.static || join(process.cwd(), 'www-static')),
-        viteConfig: resolve(parsed.viteConfig || join(process.cwd(), 'configs', 'vite.config.ts')),
+        indexHtmlPath,
+        postsDirPath: resolve(parsed.posts || './posts/'),
+        staticDirPath: resolve(parsed.static || join(process.cwd(), 'www-static')),
+        viteConfigPath: resolve(
+            parsed.viteConfig || join(process.cwd(), 'configs', 'vite.config.ts'),
+        ),
         mode: parsed.mode || BlogVirMode.Build,
         verbose: parsed.verbose,
     };

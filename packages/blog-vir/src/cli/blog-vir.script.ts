@@ -3,25 +3,25 @@
 import {ensureErrorAndPrependMessage, log} from '@augment-vir/common';
 import {existsSync} from 'node:fs';
 import {generateStaticBlog} from './generate-static-blog.js';
-import {BlogVirMode, parseBlogVirArgs} from './parse-cli-args.js';
+import {parseBlogVirArgs} from './parse-cli-args.js';
 import {runVite} from './run-vite-build.js';
 
 async function main(): Promise<void> {
     const args = parseBlogVirArgs(process.argv, import.meta);
 
-    if (!existsSync(args.indexHtml)) {
+    if (!existsSync(args.indexHtmlPath)) {
         throw new Error(
             [
                 'index.html not found at "',
-                args.indexHtml,
+                args.indexHtmlPath,
                 '".',
             ].join(''),
         );
-    } else if (!existsSync(args.postsDir)) {
+    } else if (!existsSync(args.postsDirPath)) {
         throw new Error(
             [
                 'Posts directory not found at "',
-                args.postsDir,
+                args.postsDirPath,
                 '".',
             ].join(''),
         );
@@ -30,13 +30,13 @@ async function main(): Promise<void> {
     log.info(
         [
             'Generating static blog content into "',
-            args.staticDir,
+            args.staticDirPath,
             '".',
         ].join(''),
     );
     const {posts} = await generateStaticBlog({
-        postsDir: args.postsDir,
-        staticDir: args.staticDir,
+        postsDir: args.postsDirPath,
+        staticDir: args.staticDirPath,
         verbose: args.verbose,
     });
     log.success(
@@ -48,9 +48,9 @@ async function main(): Promise<void> {
     );
 
     await runVite({
-        configPath: args.viteConfig,
+        configPath: args.viteConfigPath,
         cwd: process.cwd(),
-        mode: args.mode === BlogVirMode.Dev ? 'dev' : args.mode,
+        mode: args.mode,
     });
 }
 

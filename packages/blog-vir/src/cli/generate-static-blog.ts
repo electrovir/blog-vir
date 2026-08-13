@@ -2,19 +2,27 @@ import {
     awaitedBlockingMap,
     chunkArray,
     ensureErrorAndPrependMessage,
+    filterMap,
+    getObjectTypedEntries,
     log,
+    mapObjectValues,
 } from '@augment-vir/common';
 import {writeJsonFile} from '@augment-vir/node';
 import {mkdir, rm} from 'node:fs/promises';
 import {join, relative} from 'node:path';
-import {blogPaths, createBlogPostJsonPath, createBlogPostPageJsonPath} from '../data/blog-paths.js';
 import {
-    type BlogIndex,
+    assertValidBlogTag,
+    blogPaths,
+    createBlogPostJsonPath,
+    createBlogPostPageJsonPath,
+    createBlogTagJsonPath,
+} from '../data/blog-paths.js';
+import {
+    type BlogAllPosts,
     type BlogPost,
-    type BlogPostMeta,
     type BlogPostPage,
-    type BlogSearchDoc,
     type BlogSearchIndex,
+    type BlogTags,
     blogPostPageSize,
 } from '../data/blog-post.js';
 import {listMarkdownFiles} from './list-markdown-files.js';
@@ -45,9 +53,17 @@ export async function generateStaticBlog({
         force: true,
         recursive: true,
     });
-    await mkdir(join(staticDir, blogPaths.postsDir), {
-        recursive: true,
-    });
+    await Promise.all(
+        [
+            blogPaths.postsDir,
+            blogPaths.pagesDir,
+            blogPaths.tagsDir,
+        ].map(async (dirPath) => {
+            await mkdir(join(staticDir, dirPath), {
+                recursive: true,
+            });
+        }),
+    );
 
     const filePaths = await listMarkdownFiles(postsDir);
 
@@ -61,51 +77,89 @@ export async function generateStaticBlog({
         }
     });
 
-    const sorted = parsed.toSorted((a, b) => b.post.date.localeCompare(a.post.date));
+    const sortedBlogPosts = parsed.toSorted((a, b) =>
+        b.post.postDate.localeCompare(a.post.postDate),
+    );
+    const tagPostSlugs = buildTagPostSlugs(sortedBlogPosts);
 
-    await awaitedBlockingMap(sorted, async ({post}) => {
-        const outPath = join(staticDir, createBlogPostJsonPath(post.slug));
+    await awaitedBlockingMap(sortedBlogPosts, async ({post}) => {
+        const outPath = join(staticDir, createBlogPostJsonPath(post.postSlug));
         await writeJsonFile(outPath, post);
     });
 
-    const index = buildIndex(sorted);
-    await awaitedBlockingMap(buildPostPages(sorted), async (page) => {
+    const allPosts: BlogAllPosts = sortedBlogPosts.map(({post}) => {
+        return {
+            postSlug: post.postSlug,
+            postTitle: post.postTitle,
+            postDate: post.postDate,
+        };
+    });
+    await awaitedBlockingMap(buildPostPages(sortedBlogPosts), async (page) => {
         await writeJsonFile(join(staticDir, createBlogPostPageJsonPath(page.pageNumber)), page);
     });
-    await writeJsonFile(join(staticDir, blogPaths.indexFile), index);
-    await writeJsonFile(join(staticDir, blogPaths.searchIndexFile), buildSearchIndex(sorted));
+    await writeJsonFile(join(staticDir, blogPaths.allPostsFile), allPosts);
+    await writeJsonFile(
+        join(staticDir, blogPaths.searchIndexFile),
+        buildSearchIndex(sortedBlogPosts),
+    );
+    await writeJsonFile(join(staticDir, blogPaths.tagsFile), buildTagCounts(tagPostSlugs));
+    await awaitedBlockingMap(
+        getObjectTypedEntries(tagPostSlugs),
+        async ([
+            tag,
+            postSlugs,
+        ]) => {
+            await writeJsonFile(join(staticDir, createBlogTagJsonPath(tag)), postSlugs);
+        },
+    );
 
     return {
-        posts: sorted.map(({post}) => post),
+        posts: sortedBlogPosts.map(({post}) => post),
         contentDir: blogContentDir,
     };
 }
 
-function buildIndex(sorted: ReadonlyArray<ParsedBlogPost>): BlogIndex {
-    const posts: BlogPostMeta[] = sorted.map(createBlogPostMeta);
+export function buildTagCounts(tagPostSlugs: Readonly<Record<string, string[]>>): BlogTags {
+    return mapObjectValues(tagPostSlugs, (tag, postSlugs) => {
+        assertValidBlogTag(tag);
 
-    const tags: Record<string, string[]> = {};
-    sorted.forEach(({post}) => {
-        post.tags.forEach((tag) => {
-            const list = tags[tag];
-            if (list) {
-                list.push(post.slug);
-            } else {
-                tags[tag] = [post.slug];
-            }
-        });
+        return postSlugs.length;
     });
-
-    return {
-        posts,
-        tags,
-    };
 }
 
-function buildPostPages(sorted: ReadonlyArray<ParsedBlogPost>): BlogPostPage[] {
-    const postPageChunks = chunkArray(sorted.map(createBlogPostMeta), {
-        chunkSize: blogPostPageSize,
-    });
+export function buildTagPostSlugs(
+    blogPosts: ReadonlyArray<ParsedBlogPost>,
+): Record<string, string[]> {
+    return blogPosts.reduce<Record<string, string[]>>((tagPosts, {post}) => {
+        return post.tags.reduce<Record<string, string[]>>((innerTagPosts, tag) => {
+            assertValidBlogTag(tag);
+
+            return {
+                ...innerTagPosts,
+                [tag]: [
+                    ...(Object.hasOwn(tagPosts, tag) ? tagPosts[tag] || [] : []),
+                    post.postSlug,
+                ],
+            };
+        }, tagPosts);
+    }, {});
+}
+
+export function buildPostPages(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogPostPage[] {
+    const postPageChunks = chunkArray(
+        blogPosts.map(({post}) => {
+            return {
+                postSlug: post.postSlug,
+                postTitle: post.postTitle,
+                tags: post.tags,
+                postDate: post.postDate,
+                postBlurb: post.postBlurb,
+            };
+        }),
+        {
+            chunkSize: blogPostPageSize,
+        },
+    );
 
     return (postPageChunks.length ? postPageChunks : [[]]).map((posts, index, pages) => {
         return {
@@ -116,38 +170,18 @@ function buildPostPages(sorted: ReadonlyArray<ParsedBlogPost>): BlogPostPage[] {
     });
 }
 
-function createBlogPostMeta({post}: ParsedBlogPost): BlogPostMeta {
-    return {
-        slug: post.slug,
-        title: post.title,
-        tags: post.tags,
-        date: post.date,
-        blurb: post.blurb,
-    };
-}
-
-function buildSearchIndex(sorted: ReadonlyArray<ParsedBlogPost>): BlogSearchIndex {
-    return sorted.flatMap(({post, sections}) => {
-        const docs: BlogSearchDoc[] = [
-            {
-                slug: post.slug,
-                title: post.title,
-                section: post.title,
-                text: post.blurb,
+export function buildSearchIndex(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogSearchIndex {
+    return blogPosts.flatMap(({post, sections}) => {
+        return filterMap(
+            sections,
+            (section) => {
+                return {
+                    postSlug: post.postSlug,
+                    postTitle: post.postTitle,
+                    ...section,
+                };
             },
-        ];
-        sections.forEach((section) => {
-            if (!section.title && !section.text) {
-                return;
-            }
-            docs.push({
-                slug: post.slug,
-                title: post.title,
-                anchor: section.anchor,
-                section: section.title || post.title,
-                text: section.text,
-            });
-        });
-        return docs;
+            (searchEntry) => Boolean(searchEntry.headingTitle || searchEntry.sectionText),
+        );
     });
 }

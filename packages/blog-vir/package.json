@@ -20,6 +20,9 @@
     "main": "src/index.ts",
     "module": "src/index.ts",
     "types": "src/index.ts",
+    "bin": {
+        "blog-vir": "bin.js"
+    },
     "scripts": {
         "build": "virmator frontend build",
         "compile": "virmator compile",
@@ -31,18 +34,22 @@
         "test:update": "npm test update"
     },
     "dependencies": {
-        "@augment-vir/assert": "^31.71.4",
-        "@augment-vir/common": "^31.71.4",
-        "@augment-vir/node": "^31.72.1",
-        "date-vir": "^8.3.2",
-        "element-vir": "*"
+        "@augment-vir/assert": "^32.2.1",
+        "@augment-vir/common": "^32.2.1",
+        "@augment-vir/node": "^32.2.1",
+        "@electrovir/color": "^1.7.11",
+        "date-vir": "^9.0.0",
+        "element-vir": "*",
+        "marked": "^18.0.9",
+        "theme-vir": "^28.25.1",
+        "vira": "^31.29.0"
     },
     "devDependencies": {
-        "@augment-vir/test": "^31.71.4",
-        "@types/node": "^25.9.2",
-        "@web/dev-server-esbuild": "^1.0.5",
-        "@web/test-runner": "^0.20.2",
-        "@web/test-runner-playwright": "^0.11.1",
+        "@augment-vir/test": "^32.2.1",
+        "@types/node": "^26.2.0",
+        "@web/dev-server-esbuild": "^2.0.0",
+        "@web/test-runner": "^1.0.0",
+        "@web/test-runner-playwright": "^1.0.0",
         "istanbul-smart-text-reporter": "^1.1.5"
     },
     "engines": {
