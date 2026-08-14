@@ -5,7 +5,13 @@
         <title>blog-vir example</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script type="module" src="./ui/elements/vir-blog-demo.element.ts"></script>
-        <link rel="stylesheet" type="text/css" href="/index.css" />
+        <link rel="stylesheet" type="text/css" href="%BASE_URL%index.css" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="blog-vir example RSS"
+            href="%BASE_URL%rss.xml"
+        />
     </head>
     <body>
         <vir-blog-demo></vir-blog-demo>

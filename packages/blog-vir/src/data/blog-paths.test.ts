@@ -1,10 +1,9 @@
-import {assert} from '@augment-vir/assert';
-import {describe, it, itCases} from '@augment-vir/test';
+import {describe, itCases} from '@augment-vir/test';
 import {
     assertValidBlogTag,
-    blogPaths,
     createBlogPostJsonPath,
     createBlogPostPageJsonPath,
+    createBlogRssFeedUrl,
     createBlogTagJsonPath,
 } from './blog-paths.js';
 
@@ -107,16 +106,17 @@ describe(createBlogPostPageJsonPath.name, () => {
     ]);
 });
 
-describe('blogPaths', () => {
-    it('nests every generated file and directory under the content directory', () => {
-        assert.deepEquals(blogPaths, {
-            contentDir: 'blog-content',
-            allPostsFile: 'blog-content/all-posts.json',
-            pagesDir: 'blog-content/pages',
-            searchIndexFile: 'blog-content/search-index.json',
-            tagsFile: 'blog-content/tags.json',
-            tagsDir: 'blog-content/tags',
-            postsDir: 'blog-content/posts',
-        });
-    });
+describe(createBlogRssFeedUrl.name, () => {
+    itCases(createBlogRssFeedUrl, [
+        {
+            it: 'appends the feed path to an absolute site URL',
+            input: 'https://example.com/blog/',
+            expect: 'https://example.com/blog/rss.xml',
+        },
+        {
+            it: 'appends the feed path to a site base path',
+            input: '/blog/',
+            expect: '/blog/rss.xml',
+        },
+    ]);
 });

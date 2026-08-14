@@ -4,6 +4,8 @@ import {
     ensureErrorAndPrependMessage,
     type PartialWithUndefined,
     type SelectFrom,
+    setFirstLetterCasing,
+    StringCase,
 } from '@augment-vir/common';
 import {runShellCommand} from '@augment-vir/node';
 import {createUtcFullDate, toUtcIsoString, type UtcIsoString} from 'date-vir';
@@ -75,15 +77,40 @@ function stripHtml(input: string): string {
 }
 
 /**
- * The blurb is the rendered post HTML up to the `<!--truncate-->` marker. When there is no marker,
- * the blurb would equal the entire post body, so it is left undefined instead.
+ * The blurb is the rendered post HTML up to the `<!--truncate-->` marker. A post with no marker is
+ * shown in full on list pages, matching how Docusaurus and Jekyll treat a missing marker.
  */
-function deriveBlurb(contentHtml: RawHtml): RawHtml | undefined {
+function deriveBlurb(contentHtml: RawHtml): SelectFrom<
+    BlogPost,
+    {
+        postBlurb: true;
+        isTruncated: true;
+    }
+> {
     const segments = contentHtml.split(truncateMarker);
     if (segments.length < 2) {
-        return undefined;
+        return {
+            postBlurb: contentHtml,
+            isTruncated: false,
+        };
     }
-    return applyBrand<RawHtml>(segments[0] ?? '');
+    return {
+        postBlurb: applyBrand<RawHtml>(segments[0] ?? ''),
+        isTruncated: true,
+    };
+}
+
+/**
+ * Tags are title cased so that posts spelling the same tag differently (`ai`, `AI`) end up under a
+ * single tag page. Only the first letter of each word changes, which leaves acronyms like `AWS`
+ * intact.
+ */
+function titleCaseTag(tag: string): string {
+    return tag
+        .trim()
+        .split(/\s+/)
+        .map((word) => setFirstLetterCasing(word, StringCase.Upper))
+        .join(' ');
 }
 
 type BlogPostFrontmatter = {
@@ -100,6 +127,11 @@ type BlogPostFrontmatter = {
     description?: string | undefined;
 };
 
+/**
+ * Searchable text and heading metadata for one post section.
+ *
+ * @category Internal
+ */
 export type BlogPostSection = SelectFrom<
     BlogPostHeading,
     {
@@ -302,6 +334,11 @@ function splitSectionsByHeading({
     return closed.filter((section) => section.sectionText || section.headingTitle);
 }
 
+/**
+ * Rendered post data plus its section-level search content.
+ *
+ * @category Internal
+ */
 export type ParsedBlogPost = {
     post: BlogPost;
     /**
@@ -311,7 +348,11 @@ export type ParsedBlogPost = {
     sections: ReadonlyArray<BlogPostSection>;
 };
 
-/** Read a single markdown file from disk and parse it into a {@link BlogPost}. */
+/**
+ * Read a single Markdown file from disk and parse it into a {@link BlogPost}.
+ *
+ * @category Internal
+ */
 export async function parseBlogPostFile(filePath: string): Promise<ParsedBlogPost> {
     const fileName = basename(filePath, extname(filePath));
     const slugInfo = parseFileNameSlug(fileName);
@@ -336,15 +377,13 @@ export async function parseBlogPostFile(filePath: string): Promise<ParsedBlogPos
         }),
     );
 
-    const tags = (frontmatter.tags || []).map((tag) => tag.trim()).filter(Boolean);
+    const tags = (frontmatter.tags || []).map(titleCaseTag).filter(Boolean);
 
     const date = await resolveBlogPostDate({
         frontmatterDate: frontmatter.date,
         slugDate: slugInfo.date,
         filePath,
     });
-
-    const blurb = deriveBlurb(contentHtml);
 
     const sections = splitSectionsByHeading({
         rawContent,
@@ -357,7 +396,7 @@ export async function parseBlogPostFile(filePath: string): Promise<ParsedBlogPos
             postTitle: frontmatter.title,
             tags,
             postDate: date,
-            postBlurb: blurb,
+            ...deriveBlurb(contentHtml),
             postContentHtml: contentHtml,
             postHeadings: headings,
         },

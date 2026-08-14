@@ -6,10 +6,12 @@ import {
     getObjectTypedEntries,
     log,
     mapObjectValues,
+    type PartialWithUndefined,
 } from '@augment-vir/common';
 import {writeJsonFile} from '@augment-vir/node';
-import {mkdir, rm} from 'node:fs/promises';
+import {mkdir, rm, writeFile} from 'node:fs/promises';
 import {join, relative} from 'node:path';
+import {defaultBlogPostPageSize} from '../data/blog-page-size.js';
 import {
     assertValidBlogTag,
     blogPaths,
@@ -23,25 +25,42 @@ import {
     type BlogPostPage,
     type BlogSearchIndex,
     type BlogTags,
-    blogPostPageSize,
 } from '../data/blog-post.js';
+import {generateRssFeed, type RssFeedConfig} from './generate-rss-feed.js';
 import {listMarkdownFiles} from './list-markdown-files.js';
-import {type ParsedBlogPost, parseBlogPostFile} from './parse-blog-post.js';
+import {parseBlogPostFile, type ParsedBlogPost} from './parse-blog-post.js';
 
+/**
+ * Inputs for {@link generateStaticBlog}.
+ *
+ * @category Internal
+ */
 export type GenerateStaticBlogOptions = {
     /** Directory containing the blog post `.md` files. */
     postsDir: string;
+    /** RSS feed metadata. */
+    rssFeed: RssFeedConfig;
     /**
-     * Directory that Vite will use as its public/static directory. The generator writes its output
-     * under `<staticDir>/blog-content/`.
+     * Directory that Vite will use as its public/static directory. The generator writes its JSON
+     * output under `<staticDir>/blog-content/`.
      */
     staticDir: string;
+} & PartialWithUndefined<{
+    /** Posts per generated post-list page. */
+    pageSize: number;
     /** If true, log per-file progress. */
-    verbose?: boolean | undefined;
-};
+    verbose: boolean;
+}>;
 
+/**
+ * Parse Markdown posts and write all generated blog data into the static directory.
+ *
+ * @category Internal
+ */
 export async function generateStaticBlog({
+    pageSize = defaultBlogPostPageSize,
     postsDir,
+    rssFeed,
     staticDir,
     verbose,
 }: Readonly<GenerateStaticBlogOptions>): Promise<{
@@ -49,10 +68,15 @@ export async function generateStaticBlog({
     contentDir: string;
 }> {
     const blogContentDir = join(staticDir, blogPaths.contentDir);
-    await rm(blogContentDir, {
-        force: true,
-        recursive: true,
-    });
+    await Promise.all([
+        rm(blogContentDir, {
+            force: true,
+            recursive: true,
+        }),
+        rm(join(staticDir, blogPaths.rssFeedFile), {
+            force: true,
+        }),
+    ]);
     await Promise.all(
         [
             blogPaths.postsDir,
@@ -94,7 +118,7 @@ export async function generateStaticBlog({
             postDate: post.postDate,
         };
     });
-    await awaitedBlockingMap(buildPostPages(sortedBlogPosts), async (page) => {
+    await awaitedBlockingMap(buildPostPages(sortedBlogPosts, pageSize), async (page) => {
         await writeJsonFile(join(staticDir, createBlogPostPageJsonPath(page.pageNumber)), page);
     });
     await writeJsonFile(join(staticDir, blogPaths.allPostsFile), allPosts);
@@ -112,6 +136,14 @@ export async function generateStaticBlog({
             await writeJsonFile(join(staticDir, createBlogTagJsonPath(tag)), postSlugs);
         },
     );
+    await writeFile(
+        join(staticDir, blogPaths.rssFeedFile),
+        generateRssFeed({
+            config: rssFeed,
+            posts: sortedBlogPosts.map(({post}) => post),
+        }),
+        'utf8',
+    );
 
     return {
         posts: sortedBlogPosts.map(({post}) => post),
@@ -119,6 +151,11 @@ export async function generateStaticBlog({
     };
 }
 
+/**
+ * Count the posts assigned to each tag.
+ *
+ * @category Internal
+ */
 export function buildTagCounts(tagPostSlugs: Readonly<Record<string, string[]>>): BlogTags {
     return mapObjectValues(tagPostSlugs, (tag, postSlugs) => {
         assertValidBlogTag(tag);
@@ -127,6 +164,11 @@ export function buildTagCounts(tagPostSlugs: Readonly<Record<string, string[]>>)
     });
 }
 
+/**
+ * Build each tag's ordered list of post slugs.
+ *
+ * @category Internal
+ */
 export function buildTagPostSlugs(
     blogPosts: ReadonlyArray<ParsedBlogPost>,
 ): Record<string, string[]> {
@@ -145,7 +187,15 @@ export function buildTagPostSlugs(
     }, {});
 }
 
-export function buildPostPages(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogPostPage[] {
+/**
+ * Split parsed posts into generated post-list pages.
+ *
+ * @category Internal
+ */
+export function buildPostPages(
+    blogPosts: ReadonlyArray<ParsedBlogPost>,
+    pageSize = defaultBlogPostPageSize,
+): BlogPostPage[] {
     const postPageChunks = chunkArray(
         blogPosts.map(({post}) => {
             return {
@@ -154,10 +204,11 @@ export function buildPostPages(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogPo
                 tags: post.tags,
                 postDate: post.postDate,
                 postBlurb: post.postBlurb,
+                isTruncated: post.isTruncated,
             };
         }),
         {
-            chunkSize: blogPostPageSize,
+            chunkSize: pageSize,
         },
     );
 
@@ -170,6 +221,11 @@ export function buildPostPages(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogPo
     });
 }
 
+/**
+ * Flatten parsed post sections into the browser search index.
+ *
+ * @category Internal
+ */
 export function buildSearchIndex(blogPosts: ReadonlyArray<ParsedBlogPost>): BlogSearchIndex {
     return blogPosts.flatMap(({post, sections}) => {
         return filterMap(

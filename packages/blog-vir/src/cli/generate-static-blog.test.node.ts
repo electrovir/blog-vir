@@ -15,6 +15,7 @@ import {
     testFileUnsafeTagGeneratedBlogDirPath,
     testFileUnsafeTagPostsDirPath,
 } from '../data/file-paths.mock.js';
+import {type RssFeedConfig} from './generate-rss-feed.js';
 import {
     buildPostPages,
     buildSearchIndex,
@@ -23,6 +24,12 @@ import {
     generateStaticBlog,
 } from './generate-static-blog.js';
 import {type ParsedBlogPost} from './parse-blog-post.js';
+
+const testRssFeedConfig: RssFeedConfig = {
+    title: 'Test Blog',
+    description: 'Generated test posts.',
+    siteUrl: 'https://example.com/blog/',
+};
 
 function createTestParsedBlogPost({
     slug,
@@ -46,6 +53,7 @@ function createTestParsedBlogPost({
             tags: [...tags],
             postDate: date,
             postBlurb: applyBrand<RawHtml>(blurb),
+            isTruncated: true,
             postContentHtml: applyBrand<RawHtml>(
                 [
                     '<p>',
@@ -293,6 +301,7 @@ describe(generateStaticBlog.name, () => {
 
         await generateStaticBlog({
             postsDir: testFilePostsDirPath,
+            rssFeed: testRssFeedConfig,
             staticDir: testFileGeneratedBlogDirPath,
         });
 
@@ -313,15 +322,16 @@ describe(generateStaticBlog.name, () => {
         await assert.throws(
             generateStaticBlog({
                 postsDir: testFileUnsafeTagPostsDirPath,
+                rssFeed: testRssFeedConfig,
                 staticDir: testFileUnsafeTagGeneratedBlogDirPath,
             }),
             {
-                matchMessage: 'Invalid blog tag "bad tag".',
+                matchMessage: 'Invalid blog tag "Bad Tag".',
             },
         );
     });
 
-    it('supports tags that match JSON object prototype property names', async () => {
+    it('title cases tags during parsing', async () => {
         await rm(testFileJsonUnsafeTagGeneratedBlogDirPath, {
             force: true,
             recursive: true,
@@ -329,18 +339,19 @@ describe(generateStaticBlog.name, () => {
 
         await generateStaticBlog({
             postsDir: testFileJsonUnsafeTagPostsDirPath,
+            rssFeed: testRssFeedConfig,
             staticDir: testFileJsonUnsafeTagGeneratedBlogDirPath,
         });
 
         assert.deepEquals(
             await readJsonFile(join(testFileJsonUnsafeTagGeneratedBlogDirPath, blogPaths.tagsFile)),
             {
-                toString: 1,
+                ToString: 1,
             },
         );
         assert.deepEquals(
             await readJsonFile(
-                join(testFileJsonUnsafeTagGeneratedBlogDirPath, createBlogTagJsonPath('toString')),
+                join(testFileJsonUnsafeTagGeneratedBlogDirPath, createBlogTagJsonPath('ToString')),
             ),
             [
                 '2024-01-04-json-unsafe-tag',

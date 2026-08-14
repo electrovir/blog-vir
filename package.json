@@ -1,6 +1,6 @@
 {
     "name": "@blog-vir/mono-root",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "private": true,
     "homepage": "https://github.com/electrovir/blog-vir",
     "bugs": {
@@ -26,9 +26,8 @@
         "lint": "virmator lint fix",
         "publish": "virmator publish npm run test:all",
         "start": "npm start --workspace @blog-vir/demo",
-        "test": "virmator test web",
-        "test:all": "npm run compile && runstorm --names tests,spelling,format,docs,deps,lint \"npm run test:coverage\" \"npm run test:spelling\" \"npm run test:format\" \"npm run test:docs\" \"npm run test:deps\" \"npm run test:lint\"",
-        "test:coverage": "npm run test coverage",
+        "test": "mono-vir for-each-async npm run test",
+        "test:all": "npm run compile && runstorm --names tests,spelling,format,docs,deps,lint \"npm run test\" \"npm run test:spelling\" \"npm run test:format\" \"npm run test:docs\" \"npm run test:deps\" \"npm run test:lint\"",
         "test:deps": "virmator deps check",
         "test:docs": "virmator docs check",
         "test:format": "virmator format check",
@@ -44,7 +43,7 @@
         "@typescript-eslint/eslint-plugin": "^8.66.0",
         "cspell": "^10.0.1",
         "dependency-cruiser": "^18.1.1",
-        "esbuild": "^0.28.1",
+        "esbuild": "^0.28.2",
         "eslint": "^10.8.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-jsdoc": "^64.0.1",

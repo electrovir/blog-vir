@@ -3,6 +3,11 @@ import {awaitedBlockingMap, extractExtension} from '@augment-vir/common';
 import {joinFilesToDir, readDirRecursive} from '@augment-vir/node';
 import {stat} from 'node:fs/promises';
 
+/**
+ * Recursively list regular Markdown files beneath a directory.
+ *
+ * @category Internal
+ */
 export async function listMarkdownFiles(dir: string): Promise<string[]> {
     return (
         await awaitedBlockingMap(

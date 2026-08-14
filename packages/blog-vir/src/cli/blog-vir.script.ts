@@ -2,12 +2,13 @@
 
 import {ensureErrorAndPrependMessage, log} from '@augment-vir/common';
 import {existsSync} from 'node:fs';
+import {createBlogPostWatcherPlugin} from './blog-post-watcher.plugin.js';
 import {generateStaticBlog} from './generate-static-blog.js';
 import {parseBlogVirArgs} from './parse-cli-args.js';
 import {runVite} from './run-vite-build.js';
 
 async function main(): Promise<void> {
-    const args = parseBlogVirArgs(process.argv, import.meta);
+    const args = await parseBlogVirArgs(process.argv, import.meta);
 
     if (!existsSync(args.indexHtmlPath)) {
         throw new Error(
@@ -35,7 +36,9 @@ async function main(): Promise<void> {
         ].join(''),
     );
     const {posts} = await generateStaticBlog({
+        pageSize: args.pageSize,
         postsDir: args.postsDirPath,
+        rssFeed: args.rssFeed,
         staticDir: args.staticDirPath,
         verbose: args.verbose,
     });
@@ -50,7 +53,20 @@ async function main(): Promise<void> {
     await runVite({
         configPath: args.viteConfigPath,
         cwd: process.cwd(),
+        devPlugins: [
+            createBlogPostWatcherPlugin({
+                pageSize: args.pageSize,
+                postsDir: args.postsDirPath,
+                rssFeed: args.rssFeed,
+                staticDir: args.staticDirPath,
+                verbose: args.verbose,
+            }),
+        ],
+        indexHtmlPath: args.indexHtmlPath,
         mode: args.mode,
+        pageSize: args.pageSize,
+        siteBasePath: args.siteBasePath,
+        staticDirPath: args.staticDirPath,
     });
 }
 

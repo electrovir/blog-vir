@@ -1,82 +1,122 @@
-import {log} from '@augment-vir/common';
-import {findAncestor, runShellCommand} from '@augment-vir/node';
 import {existsSync} from 'node:fs';
-import {join, relative, resolve} from 'node:path';
-import {BlogVirMode} from './parse-cli-args.js';
+import {dirname, join} from 'node:path';
+import {build, createServer, preview, type InlineConfig, type Plugin} from 'vite';
+import {type InjectedBlogVirData} from '../data/injected-global-data.js';
+import {BlogVirMode} from './blog-vir-mode.js';
 
+/**
+ * Inputs shared by the Vite development, build, and preview runners.
+ *
+ * @category Internal
+ */
 export type RunViteBuildOptions = {
-    /**
-     * Path to the consumer's Vite config (defaults to `<package>/configs/vite.config.ts`, derived
-     * from the index.html path).
-     */
-    configPath: string;
-    /** Working directory to run Vite from (defaults to the package containing the config). */
+    /** Optional path to the consumer's Vite config. */
+    configPath: string | undefined;
+    /** Working directory containing blog-vir's build output. */
     cwd: string;
     /** Which Vite command to run. */
     mode: BlogVirMode;
+    /** Plugins that blog-vir injects into the dev server. */
+    devPlugins: ReadonlyArray<Plugin>;
+    /** Path to the site's Vite entry point. */
+    indexHtmlPath: string;
+    /** Posts shown on each post-list page. */
+    pageSize: number;
+    /** Vite base path derived from the canonical blog URL. */
+    siteBasePath: string;
+    /** Directory containing static files that Vite serves and copies into the build. */
+    staticDirPath: string;
 };
 
-/** Vite subcommand for each mode. Dev runs the default dev server, so it has no subcommand. */
-const viteSubCommands: Readonly<Record<BlogVirMode, string>> = {
-    [BlogVirMode.Build]: 'build',
-    [BlogVirMode.Preview]: 'preview',
-    [BlogVirMode.Dev]: '',
+type ViteModeRunner = (options: Readonly<RunViteBuildOptions>) => Promise<void>;
+
+const viteModeRunners: Readonly<Record<BlogVirMode, ViteModeRunner>> = {
+    [BlogVirMode.Build]: runViteProductionBuild,
+    [BlogVirMode.Preview]: runVitePreviewServer,
+    [BlogVirMode.Dev]: runViteDevServer,
 };
 
-export async function runVite({
+/**
+ * Create Vite's inline config, loading a consumer config when one was provided.
+ *
+ * @category Internal
+ */
+export function createViteInlineConfig({
     configPath,
     cwd,
-    mode,
-}: Readonly<RunViteBuildOptions>): Promise<void> {
-    if (!existsSync(configPath)) {
+    indexHtmlPath,
+    pageSize,
+    siteBasePath,
+    staticDirPath,
+}: Readonly<Omit<RunViteBuildOptions, 'devPlugins' | 'mode'>>): InlineConfig {
+    const blogViteConfig: InlineConfig = {
+        base: siteBasePath,
+        define: {
+            VITE_INJECTED_BLOG_VIR_DATA: JSON.stringify({
+                pageSize,
+                siteBasePath,
+            } satisfies InjectedBlogVirData),
+        },
+    };
+
+    if (configPath) {
+        return {
+            ...blogViteConfig,
+            configFile: configPath,
+        };
+    }
+
+    return {
+        ...blogViteConfig,
+        configFile: false,
+        root: dirname(indexHtmlPath),
+        publicDir: staticDirPath,
+        build: {
+            outDir: join(cwd, 'dist'),
+            emptyOutDir: true,
+        },
+    };
+}
+
+/**
+ * Run Vite in the requested blog-vir mode.
+ *
+ * @category Internal
+ */
+export async function runVite(options: Readonly<RunViteBuildOptions>) {
+    if (options.configPath && !existsSync(options.configPath)) {
         throw new Error(
             [
                 'Vite config not found at "',
-                configPath,
+                options.configPath,
                 '".',
             ].join(''),
         );
     }
-    const relConfig = relative(cwd, configPath);
-    const command = [
-        'NODE_OPTIONS="--import tsx"',
-        'npx',
-        'vite',
-        viteSubCommands[mode],
-        '--config',
-        JSON.stringify(relConfig),
-    ]
-        .filter(Boolean)
-        .join(' ');
 
-    log.faint(
-        [
-            'running: ',
-            command,
-        ].join(''),
-    );
-    const result = await runShellCommand(command, {
-        cwd,
-        hookUpToConsole: true,
-    });
-    if (result.exitCode) {
-        throw new Error(
-            [
-                'Vite exited with code ',
-                String(result.exitCode),
-                '.',
-            ].join(''),
-        );
-    }
+    await viteModeRunners[options.mode](options);
 }
 
-/**
- * Try to find a `configs/vite.config.ts` walking up from the given starting path. The lookup stops
- * at the first ancestor that contains a `configs/vite.config.ts` file.
- */
-export function findDefaultViteConfigPath(startPath: string): string | undefined {
-    const ancestor = findAncestor(resolve(startPath), (dir) => {
-        return existsSync(join(dir, 'configs', 'vite.config.ts'));
+async function runViteProductionBuild(options: Readonly<RunViteBuildOptions>) {
+    await build(createViteInlineConfig(options));
+}
+
+async function runVitePreviewServer(options: Readonly<RunViteBuildOptions>) {
+    const server = await preview(createViteInlineConfig(options));
+    server.printUrls();
+    server.bindCLIShortcuts({
+        print: true,
     });
-    return ancestor && join(ancestor, 'configs', 'vite.config.ts');
+}
+
+async function runViteDevServer(options: Readonly<RunViteBuildOptions>) {
+    const server = await createServer({
+        ...createViteInlineConfig(options),
+        plugins: [...options.devPlugins],
+    });
+    await server.listen();
+    server.printUrls();
+    server.bindCLIShortcuts({
+        print: true,
+    });
 }

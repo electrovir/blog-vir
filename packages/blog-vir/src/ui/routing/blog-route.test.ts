@@ -1,6 +1,6 @@
 import {describe, itCases} from '@augment-vir/test';
 import {type FullSpaRoute} from 'spa-router-vir';
-import {sanitizeBlogRoute} from './blog-route.js';
+import {blogPathTree, sanitizeBlogRoute} from './blog-route.js';
 
 function createRawRoute(
     paths: ReadonlyArray<string>,
@@ -28,12 +28,12 @@ describe(sanitizeBlogRoute.name, () => {
         {
             it: 'keeps a post slug',
             input: createRawRoute([
-                'post',
+                blogPathTree.paths.children.post.path,
                 'my-post',
             ]),
             expect: {
                 paths: [
-                    'post',
+                    blogPathTree.paths.children.post.path,
                     'my-post',
                 ],
                 search: undefined,
@@ -42,7 +42,7 @@ describe(sanitizeBlogRoute.name, () => {
         },
         {
             it: 'sends a bare post path home',
-            input: createRawRoute(['post']),
+            input: createRawRoute([blogPathTree.paths.children.post.path]),
             expect: {
                 paths: [],
                 search: undefined,
@@ -61,13 +61,13 @@ describe(sanitizeBlogRoute.name, () => {
         {
             it: 'drops extra segments below a tag',
             input: createRawRoute([
-                'tags',
+                blogPathTree.paths.children.tags.path,
                 'typescript',
                 'extra',
             ]),
             expect: {
                 paths: [
-                    'tags',
+                    blogPathTree.paths.children.tags.path,
                     'typescript',
                 ],
                 search: undefined,
@@ -75,25 +75,51 @@ describe(sanitizeBlogRoute.name, () => {
             },
         },
         {
-            it: 'keeps the query on the search route',
-            input: createRawRoute(['search'], {
+            it: 'drops every search param',
+            input: createRawRoute([blogPathTree.paths.children.history.path], {
                 q: ['router'],
             }),
             expect: {
-                paths: ['search'],
-                search: {
-                    q: ['router'],
-                },
+                paths: [blogPathTree.paths.children.history.path],
+                search: undefined,
                 hash: undefined,
             },
         },
         {
-            it: 'drops the query on every other route',
-            input: createRawRoute(['all'], {
-                q: ['router'],
-            }),
+            it: 'keeps a later list page',
+            input: createRawRoute([
+                blogPathTree.paths.children.page.path,
+                '3',
+            ]),
             expect: {
-                paths: ['all'],
+                paths: [
+                    blogPathTree.paths.children.page.path,
+                    '3',
+                ],
+                search: undefined,
+                hash: undefined,
+            },
+        },
+        {
+            it: 'sends the first list page home',
+            input: createRawRoute([
+                blogPathTree.paths.children.page.path,
+                '1',
+            ]),
+            expect: {
+                paths: [],
+                search: undefined,
+                hash: undefined,
+            },
+        },
+        {
+            it: 'sends a non-numeric list page home',
+            input: createRawRoute([
+                blogPathTree.paths.children.page.path,
+                'nope',
+            ]),
+            expect: {
+                paths: [],
                 search: undefined,
                 hash: undefined,
             },
@@ -102,7 +128,7 @@ describe(sanitizeBlogRoute.name, () => {
             it: 'keeps a heading anchor',
             input: createRawRoute(
                 [
-                    'post',
+                    blogPathTree.paths.children.post.path,
                     'my-post',
                 ],
                 undefined,
@@ -110,7 +136,7 @@ describe(sanitizeBlogRoute.name, () => {
             ),
             expect: {
                 paths: [
-                    'post',
+                    blogPathTree.paths.children.post.path,
                     'my-post',
                 ],
                 search: undefined,
