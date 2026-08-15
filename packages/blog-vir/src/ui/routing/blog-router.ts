@@ -1,8 +1,7 @@
-import {check} from '@augment-vir/assert';
-import {addPrefix, type PartialWithUndefined} from '@augment-vir/common';
+import {removePrefix, type PartialWithUndefined} from '@augment-vir/common';
 import {SpaRouter} from 'spa-router-vir';
-import {buildUrl} from 'url-vir';
-import {type BlogPaths, sanitizeBlogRoute} from './blog-route.js';
+import {joinUrlPaths} from 'url-vir';
+import {sanitizeBlogRoute, type BlogPaths} from './blog-route.js';
 
 /**
  * Router configured with the blog's valid paths and hash values.
@@ -30,14 +29,10 @@ export function createBlogRouter(
 ) {
     return new SpaRouter<BlogPaths, undefined, string | undefined>({
         basePath: params.basePath
-            ? buildUrl(
-                  addPrefix({
-                      value: params.basePath,
-                      prefix: '/',
-                  }),
-              )
-                  .paths.filter(check.isTruthy)
-                  .join('/') || undefined
+            ? removePrefix({
+                  value: joinUrlPaths('/', params.basePath),
+                  prefix: '/',
+              }) || undefined
             : undefined,
         sanitizeRoute: sanitizeBlogRoute,
     });

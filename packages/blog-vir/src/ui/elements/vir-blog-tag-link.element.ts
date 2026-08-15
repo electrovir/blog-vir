@@ -3,6 +3,7 @@ import {css, defineElement, html} from 'element-vir';
 import {viraTheme} from 'vira';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {blogPathTree} from '../routing/blog-route.js';
+import {blogFontSizes} from '../util/shared-styles.js';
 import {VirBlogLink} from './vir-blog-link.element.js';
 
 /**
@@ -21,18 +22,24 @@ export const VirBlogTagLink = defineElement<{
     tagName: 'vir-blog-tag-link',
     styles: css`
         :host {
-            display: inline-flex;
-            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            font-size: ${blogFontSizes.tag};
             color: ${viraTheme.colors['vira-grey-foreground-placeholder'].foreground.value};
         }
 
-        ${VirBlogLink} .post-count {
+        .tag-wrapper {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .post-count {
             ${colorCss(viraTheme.colors['vira-grey-behind-fg-small-body'])}
             display: inline-block;
-            margin-left: 6px;
-            padding: 0 6px;
-            border-radius: 10px;
-            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: ${blogFontSizes.tagPostCount};
             text-decoration: none;
         }
     `,
@@ -46,12 +53,14 @@ export const VirBlogTagLink = defineElement<{
                 },
                 underlineOnHover: true,
             })}>
-                ${inputs.showHashPrefix ? '#' : ''}${inputs.tag}
-                ${inputs.postCount == undefined
-                    ? ''
-                    : html`
-                          <span class="post-count">${inputs.postCount}</span>
-                      `}
+                <div class="tag-wrapper">
+                    <span>${inputs.showHashPrefix ? '#' : ''}${inputs.tag}</span>
+                    ${inputs.postCount == undefined
+                        ? ''
+                        : html`
+                              <span class="post-count">${inputs.postCount}</span>
+                          `}
+                </div>
             </${VirBlogLink}>
         `;
     },

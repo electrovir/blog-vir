@@ -4,11 +4,7 @@ import {ViraAbsoluteTime, viraFontCssVars, viraTheme} from 'vira';
 import {type BlogPostListing} from '../../data/blog-post.js';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {blogPathTree} from '../routing/blog-route.js';
-import {
-    blogBlurbContentScale,
-    blogBlurbTitleFontSize,
-    createBlogContentStyles,
-} from '../util/shared-styles.js';
+import {blogFontSizes, createBlogContentStyles} from '../util/shared-styles.js';
 import {VirBlogLink} from './vir-blog-link.element.js';
 import {VirBlogTagLink} from './vir-blog-tag-link.element.js';
 
@@ -32,13 +28,13 @@ export const VirBlogPostBlurb = defineElement<{
 
         .title {
             display: inline-block;
-            font-size: ${blogBlurbTitleFontSize}em;
+            font-size: ${blogFontSizes.blurbTitle};
             font-weight: ${viraFontCssVars['vira-font-weight-bold'].value};
             color: ${viraTheme.colors['vira-brand-foreground-non-body'].foreground.value};
         }
 
         .blurb {
-            ${createBlogContentStyles(blogBlurbContentScale)}
+            ${createBlogContentStyles(blogFontSizes.blurbContentHeading)}
         }
 
         .read-more-row {
@@ -55,7 +51,7 @@ export const VirBlogPostBlurb = defineElement<{
             display: flex;
             gap: 12px;
             align-items: center;
-            font-size: 0.9em;
+            font-size: ${blogFontSizes.blurbMetadata};
             color: ${viraTheme.colors['vira-grey-foreground-placeholder'].foreground.value};
             margin: 4px 0 8px;
         }

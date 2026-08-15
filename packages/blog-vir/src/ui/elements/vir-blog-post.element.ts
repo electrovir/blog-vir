@@ -5,7 +5,7 @@ import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
 import {
     blogContentMaxWidth,
-    blogPostTitleFontSize,
+    blogFontSizes,
     createBlogContentStyles,
 } from '../util/shared-styles.js';
 import {VirBlogTagLink} from './vir-blog-tag-link.element.js';
@@ -32,7 +32,7 @@ export const VirBlogPost = defineElement<{
                 margin-bottom: 24px;
 
                 & .title {
-                    font-size: ${blogPostTitleFontSize}em;
+                    font-size: ${blogFontSizes.postTitle};
                     margin: 0 0 8px;
                 }
 
@@ -42,7 +42,7 @@ export const VirBlogPost = defineElement<{
                     gap: 12px;
                     align-items: center;
                     color: ${viraTheme.colors['vira-grey-foreground-placeholder'].foreground.value};
-                    font-size: 0.95em;
+                    font-size: ${blogFontSizes.postMetadata};
                 }
 
                 & .tag-list {

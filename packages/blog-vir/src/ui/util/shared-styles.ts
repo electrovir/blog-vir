@@ -11,51 +11,56 @@ import {viraFontCssVars, viraTheme} from 'vira';
 export const blogContentMaxWidth = css`1200px`;
 
 /**
- * Font size, in `em`, of the `h1` post title on a full post page.
+ * Font sizes, in pixels, used by blog elements.
  *
  * @category Internal
  */
-export const blogPostTitleFontSize = 2.4;
-
-/**
- * Font size, in `em`, of a post title on list pages, where posts are shown as blurbs.
- *
- * @category Internal
- */
-export const blogBlurbTitleFontSize = 2;
-
-/**
- * List pages show a smaller post title than a post's own page does, so their content headings
- * shrink by the same ratio to keep the heading hierarchy below the title intact.
- *
- * @category Internal
- */
-export const blogBlurbContentScale = blogBlurbTitleFontSize / blogPostTitleFontSize;
-
-/** Heading font sizes, in `em`, for post content shown at full size. */
-const blogHeadingFontSizes: Record<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6', number> = {
-    h1: 2,
-    h2: 1.6,
-    h3: 1.3,
-    h4: 1.15,
-    h5: 1,
-    h6: 0.9,
+export const blogFontSizes = {
+    blurbMetadata: css`14px`,
+    blurbTitle: css`32px`,
+    code: css`16px`,
+    blurbContentHeading: {
+        h1: css`26px`,
+        h2: css`21px`,
+        h3: css`17px`,
+        h4: css`15px`,
+        h5: css`13px`,
+        h6: css`12px`,
+    },
+    contentHeading: {
+        h1: css`32px`,
+        h2: css`26px`,
+        h3: css`21px`,
+        h4: css`18px`,
+        h5: css`16px`,
+        h6: css`14px`,
+    },
+    headerBrand: css`19px`,
+    postMetadata: css`15px`,
+    postTitle: css`38px`,
+    searchHeading: css`14px`,
+    tag: css`13px`,
+    tagListTag: css`20px`,
+    tagPostCount: css`12px`,
 };
 
 /**
  * Re-usable styles for post content rendered from markdown. These target the `unsafeHTML` injected
- * markup, so selectors live inside an outer wrapper. Pass a `headingScale` below `1` to shrink
- * every heading by that ratio.
+ * markup, so selectors live inside an outer wrapper.
  *
  * @category Internal
  */
-export function createBlogContentStyles(headingScale = 1) {
+export function createBlogContentStyles(
+    headingFontSizes: Readonly<
+        Record<keyof typeof blogFontSizes.contentHeading, ReturnType<typeof css>>
+    > = blogFontSizes.contentHeading,
+) {
     const headingSizeStyles = unsafeCSS(
-        getObjectTypedKeys(blogHeadingFontSizes)
+        getObjectTypedKeys(headingFontSizes)
             .map((headingTag) => {
                 return css`
                     & ${unsafeCSS(headingTag)} {
-                        font-size: ${blogHeadingFontSizes[headingTag] * headingScale}em;
+                        font-size: ${headingFontSizes[headingTag]};
                     }
                 `;
             })
@@ -96,7 +101,7 @@ export function createBlogContentStyles(headingScale = 1) {
 
         & code {
             font-family: ${viraFontCssVars['vira-monospace'].value};
-            font-size: 1.05em;
+            font-size: ${blogFontSizes.code};
         }
 
         & :not(pre) > code {

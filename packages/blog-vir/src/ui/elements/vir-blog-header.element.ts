@@ -4,6 +4,7 @@ import {themeDefaultKey} from 'theme-vir';
 import {viraFontCssVars, viraTheme} from 'vira';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {blogPathTree} from '../routing/blog-route.js';
+import {blogFontSizes} from '../util/shared-styles.js';
 import {VirBlogLink} from './vir-blog-link.element.js';
 
 const headerResizeObservers = new WeakMap<HTMLElement, ResizeObserver>();
@@ -73,7 +74,7 @@ export const VirBlogHeader = defineElement<{
                     align-items: center;
                     gap: 8px;
                     font-weight: ${viraFontCssVars['vira-font-weight-bold'].value};
-                    font-size: 1.2em;
+                    font-size: ${blogFontSizes.headerBrand};
                 }
 
                 & .nav {

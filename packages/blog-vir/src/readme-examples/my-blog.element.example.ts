@@ -1,4 +1,4 @@
-import {VirBlog} from 'blog-vir';
+import {VirBlog} from 'blog-vir/src/ui/elements/vir-blog.element.js';
 import {defineElement, html} from 'element-vir';
 
 export const MyBlog = defineElement()({

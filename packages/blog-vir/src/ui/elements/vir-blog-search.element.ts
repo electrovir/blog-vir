@@ -18,6 +18,7 @@ import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
 import {blogPathTree} from '../routing/blog-route.js';
 import {type BlogRouter} from '../routing/blog-router.js';
+import {blogFontSizes} from '../util/shared-styles.js';
 
 const maxResults = 30;
 
@@ -108,7 +109,7 @@ export const VirBlogSearch = defineElement<{
                             & .heading-title {
                                 color: ${viraTheme.colors['vira-grey-foreground-body'].foreground
                                     .value};
-                                font-size: 0.9em;
+                                font-size: ${blogFontSizes.searchHeading};
                             }
                         }
                     }

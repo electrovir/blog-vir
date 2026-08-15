@@ -60,7 +60,7 @@ Create `src/my-blog.element.ts`:
 <!-- example-link: src/readme-examples/my-blog.element.example.ts -->
 
 ```TypeScript
-import {VirBlog} from 'blog-vir';
+import {VirBlog} from 'blog-vir/src/ui/elements/vir-blog.element.js';
 import {defineElement, html} from 'element-vir';
 
 export const MyBlog = defineElement()({
@@ -89,7 +89,7 @@ Then load it from `src/index.html`:
             rel="alternate"
             type="application/rss+xml"
             title="My Blog RSS"
-            href="%BASE_URL%rss.xml"
+            href="/rss.xml"
         />
     </head>
     <body>

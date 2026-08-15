@@ -3,7 +3,7 @@ import {asyncProp, css, defineElement, html, renderAsync} from 'element-vir';
 import {ViraError, viraTheme} from 'vira';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
-import {blogContentMaxWidth} from '../util/shared-styles.js';
+import {blogContentMaxWidth, blogFontSizes} from '../util/shared-styles.js';
 import {VirBlogTagLink} from './vir-blog-tag-link.element.js';
 
 /**
@@ -28,15 +28,16 @@ export const VirBlogTagList = defineElement<{
 
         ol {
             display: flex;
-            flex-direction: column;
-            gap: 4px;
+            flex-wrap: wrap;
+            gap: 32px;
+            list-style: none;
             margin: 0;
-            padding-left: 24px;
+            padding: 0;
 
             /* Overrides the dimming and shrinking that tag links use inside post metadata. */
             & li ${VirBlogTagLink} {
                 color: inherit;
-                font-size: 1.25em;
+                font-size: ${blogFontSizes.tagListTag};
             }
         }
 

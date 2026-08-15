@@ -4,13 +4,20 @@ date: 2024-05-21
 tags: [markdown, styling]
 ---
 
-Quotes render with a vertical bar on the left instead of a background fill.
+> Quotes render with a vertical bar on the left instead of a background fill.
 
 <!--truncate-->
 
 ## Nesting
 
-Quotes can hold lists and code, and they can nest inside each other.
+> Quotes can hold lists and code, and they can nest inside each other.
+>
+> -   This list is inside a quote.
+> -   So is this item.
+>
+>     const quotedCode = true;
+>
+> > This quote is nested inside another quote.
 
 ## Notes
 

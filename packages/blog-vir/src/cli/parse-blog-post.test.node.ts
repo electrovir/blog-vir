@@ -1,4 +1,5 @@
 import {assert} from '@augment-vir/assert';
+import {applyBrand} from '@augment-vir/common';
 import {describe, it} from '@augment-vir/test';
 import {
     createUtcFullDate,
@@ -11,6 +12,7 @@ import {
 import {mkdtemp, rm, stat, writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
+import {type RawHtml} from '../data/blog-post.js';
 import {parseBlogPostFile} from './parse-blog-post.js';
 
 function createTestDate(day: DayOfMonth): UtcIsoString {
@@ -51,6 +53,27 @@ async function readFileCreationDate(filePath: string): Promise<UtcIsoString> {
 }
 
 describe('blog post date resolution', () => {
+    it('renders Markdown block quotes', async () => {
+        await useTempPostFile(
+            {
+                fileName: '2024-01-01-block-quote.md',
+                content: [
+                    '---',
+                    'title: Block quote',
+                    '---',
+                    '',
+                    '> Quoted text.',
+                ].join('\n'),
+            },
+            async (tempFilePath) => {
+                assert.strictEquals(
+                    (await parseBlogPostFile(tempFilePath)).post.postContentHtml,
+                    applyBrand<RawHtml>('<blockquote>\n<p>Quoted text.</p>\n</blockquote>\n'),
+                );
+            },
+        );
+    });
+
     it('normalizes and deduplicates tags', async () => {
         await useTempPostFile(
             {

@@ -1,5 +1,5 @@
 import {colorCss} from '@electrovir/color';
-import {VirBlog} from 'blog-vir';
+import {VirBlog} from 'blog-vir/src/ui/elements/vir-blog.element.js';
 import {css, defineElement, html} from 'element-vir';
 import {themeDefaultKey} from 'theme-vir';
 import {ViraLink, viraTheme} from 'vira';

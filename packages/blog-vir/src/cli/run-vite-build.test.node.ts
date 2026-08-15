@@ -43,7 +43,7 @@ describe(runVite.name, () => {
             await Promise.all([
                 writeFile(
                     join(sourceDirPath, 'index.html'),
-                    '<!doctype html><title>Default Vite build</title><a href="%BASE_URL%rss.xml">feed</a><script type="module" src="./main.ts"></script>',
+                    '<!doctype html><title>Default Vite build</title><link rel="alternate" href="/rss.xml"><script type="module" src="./main.ts"></script>',
                     'utf8',
                 ),
                 writeFile(

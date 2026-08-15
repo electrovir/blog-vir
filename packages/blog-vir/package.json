@@ -1,6 +1,6 @@
 {
     "name": "blog-vir",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Generate a blog.",
     "keywords": [
         "blog",
@@ -27,9 +27,9 @@
     "bin": "dist/cli/blog-vir.script.js",
     "scripts": {
         "build": "virmator frontend build",
-        "compile": "virmator compile",
+        "compile": "virmator compile && chmod +x dist/cli/blog-vir.script.js",
         "docs": "virmator docs",
-        "start": "virmator frontend",
+        "start": "npm run compile && virmator frontend",
         "test": "runstorm --names node,web \"npm run test:node\" \"npm run test:web\"",
         "test:docs": "virmator docs check",
         "test:node": "virmator test node 'src/**/*.test.node.ts'",
