@@ -147,6 +147,35 @@ describe(buildTagPostSlugs.name, () => {
                 ],
             },
         },
+        {
+            it: 'collapses tags with the same normalized name',
+            input: [
+                createTestParsedBlogPost({
+                    slug: 'first-typescript-formatting-post',
+                    title: 'First TypeScript Formatting Post',
+                    tags: [
+                        'TypeScript Formatting',
+                    ],
+                    date: createTestDate(2),
+                    blurb: 'First TypeScript Formatting blurb.',
+                }),
+                createTestParsedBlogPost({
+                    slug: 'second-typescript-formatting-post',
+                    title: 'Second TypeScript Formatting Post',
+                    tags: [
+                        'typescript-formatting',
+                    ],
+                    date: createTestDate(1),
+                    blurb: 'Second TypeScript Formatting blurb.',
+                }),
+            ],
+            expect: {
+                'typescript-formatting': [
+                    'first-typescript-formatting-post',
+                    'second-typescript-formatting-post',
+                ],
+            },
+        },
     ]);
 });
 
@@ -326,12 +355,12 @@ describe(generateStaticBlog.name, () => {
                 staticDir: testFileUnsafeTagGeneratedBlogDirPath,
             }),
             {
-                matchMessage: 'Invalid blog tag "Bad Tag".',
+                matchMessage: 'Invalid blog tag "bad/tag".',
             },
         );
     });
 
-    it('title cases tags during parsing', async () => {
+    it('handles JSON unsafe tag names', async () => {
         await rm(testFileJsonUnsafeTagGeneratedBlogDirPath, {
             force: true,
             recursive: true,
@@ -346,12 +375,15 @@ describe(generateStaticBlog.name, () => {
         assert.deepEquals(
             await readJsonFile(join(testFileJsonUnsafeTagGeneratedBlogDirPath, blogPaths.tagsFile)),
             {
-                ToString: 1,
+                constructor: 1,
             },
         );
         assert.deepEquals(
             await readJsonFile(
-                join(testFileJsonUnsafeTagGeneratedBlogDirPath, createBlogTagJsonPath('ToString')),
+                join(
+                    testFileJsonUnsafeTagGeneratedBlogDirPath,
+                    createBlogTagJsonPath('constructor'),
+                ),
             ),
             [
                 '2024-01-04-json-unsafe-tag',

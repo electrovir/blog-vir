@@ -1,7 +1,7 @@
 ---
 title: Json Unsafe Tag
 date: 2024-01-04
-tags: [toString]
+tags: [constructor]
 ---
 
 JSON unsafe tag content.

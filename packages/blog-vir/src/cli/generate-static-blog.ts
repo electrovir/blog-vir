@@ -28,6 +28,7 @@ import {
 } from '../data/blog-post.js';
 import {generateRssFeed, type RssFeedConfig} from './generate-rss-feed.js';
 import {listMarkdownFiles} from './list-markdown-files.js';
+import {normalizeBlogTag} from './normalize-blog-tag.js';
 import {parseBlogPostFile, type ParsedBlogPost} from './parse-blog-post.js';
 
 /**
@@ -174,12 +175,15 @@ export function buildTagPostSlugs(
 ): Record<string, string[]> {
     return blogPosts.reduce<Record<string, string[]>>((tagPosts, {post}) => {
         return post.tags.reduce<Record<string, string[]>>((innerTagPosts, tag) => {
-            assertValidBlogTag(tag);
+            const normalizedTag = normalizeBlogTag(tag);
+            assertValidBlogTag(normalizedTag);
 
             return {
                 ...innerTagPosts,
-                [tag]: [
-                    ...(Object.hasOwn(tagPosts, tag) ? tagPosts[tag] || [] : []),
+                [normalizedTag]: [
+                    ...(Object.hasOwn(tagPosts, normalizedTag)
+                        ? tagPosts[normalizedTag] || []
+                        : []),
                     post.postSlug,
                 ],
             };

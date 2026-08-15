@@ -30,6 +30,18 @@ export type RunViteBuildOptions = {
 
 type ViteModeRunner = (options: Readonly<RunViteBuildOptions>) => Promise<void>;
 
+const virmatorExternalDependencies: string[] = [
+    /** These are specified, but not actually used in a browser, in `@augment-vir/common` exports. */
+    'node:util',
+    'node:path',
+    /** Imported in object-shape-tester but only in backend code. */
+    'node:fs/promises',
+    /** These are specified, but not actually used in a browser, in `@augment-vir/test` exports. */
+    '@playwright/test',
+    /** For extra measure, also block playwright. */
+    'playwright',
+];
+
 const viteModeRunners: Readonly<Record<BlogVirMode, ViteModeRunner>> = {
     [BlogVirMode.Build]: runViteProductionBuild,
     [BlogVirMode.Preview]: runVitePreviewServer,
@@ -69,11 +81,31 @@ export function createViteInlineConfig({
     return {
         ...blogViteConfig,
         configFile: false,
+        server: {
+            host: true,
+            watch: {
+                ignored: [
+                    '**/node_modules/**',
+                    '**/.git/**',
+                    '**/.history/**',
+                ],
+            },
+        },
+        clearScreen: false,
         root: dirname(indexHtmlPath),
         publicDir: staticDirPath,
         build: {
             outDir: join(cwd, 'dist'),
             emptyOutDir: true,
+            target: 'es2024',
+            rollupOptions: {
+                external: virmatorExternalDependencies,
+            },
+        },
+        optimizeDeps: {
+            rolldownOptions: {},
+            exclude: virmatorExternalDependencies,
+            force: true,
         },
     };
 }

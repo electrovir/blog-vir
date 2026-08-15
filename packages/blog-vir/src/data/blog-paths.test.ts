@@ -83,8 +83,8 @@ describe(createBlogTagJsonPath.name, () => {
     itCases(createBlogTagJsonPath, [
         {
             it: 'builds a tag JSON path from a valid tag',
-            input: 'typescript',
-            expect: 'blog-content/tags/typescript.json',
+            input: 'TypeScript',
+            expect: 'blog-content/tags/TypeScript.json',
         },
         {
             it: 'validates the tag before building the path',

@@ -51,6 +51,28 @@ async function readFileCreationDate(filePath: string): Promise<UtcIsoString> {
 }
 
 describe('blog post date resolution', () => {
+    it('normalizes and deduplicates tags', async () => {
+        await useTempPostFile(
+            {
+                fileName: '2024-01-01-tags.md',
+                content: [
+                    '---',
+                    'title: Tags',
+                    'tags: [TypeScript, typescript, Formatting Details]',
+                    '---',
+                    '',
+                    'Post content.',
+                ].join('\n'),
+            },
+            async (tempFilePath) => {
+                assert.deepEquals((await parseBlogPostFile(tempFilePath)).post.tags, [
+                    'typescript',
+                    'formatting-details',
+                ]);
+            },
+        );
+    });
+
     it('prefers frontmatter dates', async () => {
         await useTempPostFile(
             {

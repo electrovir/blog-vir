@@ -4,8 +4,6 @@ import {
     ensureErrorAndPrependMessage,
     type PartialWithUndefined,
     type SelectFrom,
-    setFirstLetterCasing,
-    StringCase,
 } from '@augment-vir/common';
 import {runShellCommand} from '@augment-vir/node';
 import {createUtcFullDate, toUtcIsoString, type UtcIsoString} from 'date-vir';
@@ -13,6 +11,7 @@ import {marked} from 'marked';
 import {readFile, stat} from 'node:fs/promises';
 import {basename, dirname, extname, relative} from 'node:path';
 import {type BlogPost, type BlogPostHeading, type RawHtml} from '../data/blog-post.js';
+import {normalizeBlogTag} from './normalize-blog-tag.js';
 import {parseFileNameSlug} from './slug.js';
 
 /** Marker used by some blog flavors (Docusaurus, Jekyll) to denote the cutoff for an excerpt. */
@@ -100,17 +99,17 @@ function deriveBlurb(contentHtml: RawHtml): SelectFrom<
     };
 }
 
-/**
- * Tags are title cased so that posts spelling the same tag differently (`ai`, `AI`) end up under a
- * single tag page. Only the first letter of each word changes, which leaves acronyms like `AWS`
- * intact.
- */
-function titleCaseTag(tag: string): string {
-    return tag
-        .trim()
-        .split(/\s+/)
-        .map((word) => setFirstLetterCasing(word, StringCase.Upper))
-        .join(' ');
+function normalizeBlogPostTags(tags: ReadonlyArray<string>): string[] {
+    return tags.reduce<string[]>((normalizedTags, tag) => {
+        const normalizedTag = normalizeBlogTag(tag);
+
+        return normalizedTag && !normalizedTags.includes(normalizedTag)
+            ? [
+                  ...normalizedTags,
+                  normalizedTag,
+              ]
+            : normalizedTags;
+    }, []);
 }
 
 type BlogPostFrontmatter = {
@@ -377,7 +376,7 @@ export async function parseBlogPostFile(filePath: string): Promise<ParsedBlogPos
         }),
     );
 
-    const tags = (frontmatter.tags || []).map(titleCaseTag).filter(Boolean);
+    const tags = normalizeBlogPostTags(frontmatter.tags || []);
 
     const date = await resolveBlogPostDate({
         frontmatterDate: frontmatter.date,
