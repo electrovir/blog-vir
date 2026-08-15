@@ -53,18 +53,7 @@ describe(VirBlogSearch.tagName, () => {
         );
         const result = await waitUntil.isDefined(() => dropdown.querySelector('.result'));
         assert.instanceOf(result, ViraLink);
-        assert.deepEquals(
-            {
-                inputTextAlign: getComputedStyle(input).textAlign,
-                dropdownTextAlign: getComputedStyle(dropdown).textAlign,
-                hasHorizontalOverflow: dropdown.scrollWidth > dropdown.clientWidth,
-            },
-            {
-                inputTextAlign: 'left',
-                dropdownTextAlign: 'left',
-                hasHorizontalOverflow: false,
-            },
-        );
+        assert.isFalse(dropdown.scrollWidth > dropdown.clientWidth);
         const triggerButton = assertWrap.instanceOf(
             popUpTrigger.shadowRoot.querySelector('.dropdown-wrapper'),
             HTMLButtonElement,

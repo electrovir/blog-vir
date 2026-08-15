@@ -17,7 +17,7 @@ describe(VirBlogHeader.tagName, () => {
                 },
             })}
                 style=${css`
-                    width: 800px;
+                    width: 1px;
                 `}
             >
                 <span
@@ -62,6 +62,7 @@ describe(VirBlogHeader.tagName, () => {
             HTMLElement,
         );
 
+        element.style.width = `${left.offsetWidth + right.offsetWidth + 1}px`;
         await waitUntil.isTrue(() => {
             return (
                 left.offsetTop === right.offsetTop &&
@@ -69,7 +70,7 @@ describe(VirBlogHeader.tagName, () => {
             );
         });
 
-        element.style.width = '700px';
+        element.style.width = `${left.offsetWidth + right.offsetWidth - 1}px`;
         await waitUntil.isTrue(() => {
             return (
                 left.offsetTop < right.offsetTop && getComputedStyle(element).position === 'static'

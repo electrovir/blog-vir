@@ -56,6 +56,10 @@ export const VirBlogHeader = defineElement<{
                 position: static;
             }
 
+            ${hostClasses['vir-blog-header-wrapped'].selector} .right {
+                border-bottom-right-radius: 8px;
+            }
+
             .left,
             .right {
                 ${colorCss(viraTheme.colors[themeDefaultKey])}
@@ -68,6 +72,8 @@ export const VirBlogHeader = defineElement<{
 
             .left {
                 gap: 16px;
+                padding-right: 16px;
+                border-bottom-right-radius: 8px;
 
                 & .brand {
                     display: flex;
@@ -86,6 +92,8 @@ export const VirBlogHeader = defineElement<{
 
             .right {
                 gap: 12px;
+                padding-left: 16px;
+                border-bottom-left-radius: 8px;
             }
         `;
     },
