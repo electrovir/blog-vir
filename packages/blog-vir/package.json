@@ -1,6 +1,6 @@
 {
     "name": "blog-vir",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Generate a blog.",
     "keywords": [
         "blog",
@@ -24,9 +24,7 @@
     "main": "src/index.ts",
     "module": "src/index.ts",
     "types": "src/index.ts",
-    "bin": {
-        "blog-vir": "^0.0.2"
-    },
+    "bin": "dist/cli/blog-vir.script.js",
     "scripts": {
         "build": "virmator frontend build",
         "compile": "virmator compile",
