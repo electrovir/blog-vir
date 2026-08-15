@@ -3,6 +3,7 @@
 set -euo pipefail
 
 npm run compile
+npm rebuild
 npm run docs
 npm run build --workspace @blog-vir/demo
 mkdir -p dist-pages/docs dist-pages/demo
