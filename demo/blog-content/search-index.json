@@ -403,14 +403,14 @@
         "postTitle": "Block Quotes",
         "headingUrlAnchor": "",
         "headingTitle": "",
-        "sectionText": "Quotes render with a vertical bar on the left instead of a background fill."
+        "sectionText": "> Quotes render with a vertical bar on the left instead of a background fill."
     },
     {
         "postSlug": "2024-05-21-block-quotes",
         "postTitle": "Block Quotes",
         "headingUrlAnchor": "nesting",
         "headingTitle": "Nesting",
-        "sectionText": "Quotes can hold lists and code, and they can nest inside each other."
+        "sectionText": "> Quotes can hold lists and code, and they can nest inside each other. > > - This list is inside a quote. > - So is this item. > > const quotedCode = true; > > > This quote is nested inside another quote."
     },
     {
         "postSlug": "2024-05-21-block-quotes",

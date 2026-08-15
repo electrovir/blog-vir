@@ -210,7 +210,7 @@
                 "styling"
             ],
             "postDate": "2024-05-21T00:00:00.000Z",
-            "postBlurb": "<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n",
+            "postBlurb": "<blockquote>\n<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n</blockquote>\n",
             "isTruncated": true
         }
     ]

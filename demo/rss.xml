@@ -197,7 +197,9 @@
             <link>https://electrovir.github.io/blog-vir/demo/post/2024-05-21-block-quotes</link>
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-05-21-block-quotes</guid>
             <pubDate>Tue, 21 May 2024 00:00:00 GMT</pubDate>
-            <description>&lt;p&gt;Quotes render with a vertical bar on the left instead of a background fill.&lt;/p&gt;</description>
+            <description>&lt;blockquote&gt;
+&lt;p&gt;Quotes render with a vertical bar on the left instead of a background fill.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
             <category>markdown</category>
             <category>styling</category>
         </item>
