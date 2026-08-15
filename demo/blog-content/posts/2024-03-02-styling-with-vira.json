@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-03-02-styling-with-vira",
+    "postTitle": "Styling with Vira",
+    "tags": [
+        "Vira",
+        "Styling"
+    ],
+    "postDate": "2024-03-02T00:00:00.000Z",
+    "postBlurb": "<p>Every color in this blog comes from the Vira color theme, so light and dark mode both work with no\nextra work from the site author.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Every color in this blog comes from the Vira color theme, so light and dark mode both work with no\nextra work from the site author.</p>\n<!--truncate--><h2>Color pairs</h2>\n<p>Vira colors come in pairs: a foreground and a background chosen together to hit a specific contrast\nlevel. Picking a pair instead of two separate colors is what keeps text legible in both themes.</p>\n<pre><code class=\"language-ts\">import {viraTheme} from &#39;vira&#39;;\n\nconst muted = viraTheme.colors[&#39;vira-grey-foreground-body&#39;].foreground.value;\n</code></pre>\n<h2>Elements</h2>\n<p>Tags, buttons, inputs, and links are all Vira elements, so they pick up theme changes immediately.</p>\n<blockquote>\n<p>Flip the theme with the switcher in the header to see it happen.</p>\n</blockquote>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Color pairs",
+            "headingUrlAnchor": "color-pairs"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Elements",
+            "headingUrlAnchor": "elements"
+        }
+    ]
+}

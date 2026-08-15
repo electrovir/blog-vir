@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-01-15-hello-blog-vir",
+    "postTitle": "Hello blog-vir",
+    "tags": [
+        "Meta",
+        "Intro"
+    ],
+    "postDate": "2024-01-15T00:00:00.000Z",
+    "postBlurb": "<p>This is the first post in the blog-vir demo site. Everything you see here was generated from a\ndirectory of markdown files.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>This is the first post in the blog-vir demo site. Everything you see here was generated from a\ndirectory of markdown files.</p>\n<!--truncate--><h2>How it works</h2>\n<p>The <code>blog-vir</code> CLI reads every <code>.md</code> file under a posts directory, renders it to HTML, and writes a\nset of JSON files into the Vite static directory. The browser then fetches only the JSON it needs\nfor the current page.</p>\n<h2>Why JSON</h2>\n<p>Shipping one JSON file per post keeps the initial page small. A blog with a thousand posts loads\nexactly as fast as a blog with three.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "How it works",
+            "headingUrlAnchor": "how-it-works"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Why JSON",
+            "headingUrlAnchor": "why-json"
+        }
+    ]
+}

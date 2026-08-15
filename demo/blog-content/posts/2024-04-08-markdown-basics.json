@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-04-08-markdown-basics",
+    "postTitle": "Markdown Basics",
+    "tags": [
+        "Markdown",
+        "Meta"
+    ],
+    "postDate": "2024-04-08T00:00:00.000Z",
+    "postBlurb": "<p>Every post is a markdown file with front matter on top and a truncation marker in the middle.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Every post is a markdown file with front matter on top and a truncation marker in the middle.</p>\n<!--truncate--><h2>Front matter</h2>\n<p>The title, date, and tags come from the front matter block. Everything after it is the post body.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Front matter",
+            "headingUrlAnchor": "front-matter"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

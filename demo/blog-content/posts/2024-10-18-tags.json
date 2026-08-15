@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-10-18-tags",
+    "postTitle": "Tags",
+    "tags": [
+        "Meta",
+        "Tags"
+    ],
+    "postDate": "2024-10-18T00:00:00.000Z",
+    "postBlurb": "<p>A post can carry any number of tags, and each one gets its own page.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>A post can carry any number of tags, and each one gets its own page.</p>\n<!--truncate--><h2>Title casing</h2>\n<p>Tags are title cased during parsing so that ai and AI end up on one page.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Title casing",
+            "headingUrlAnchor": "title-casing"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

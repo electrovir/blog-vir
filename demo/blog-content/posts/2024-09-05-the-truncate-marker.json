@@ -1,0 +1,23 @@
+{
+    "postSlug": "2024-09-05-the-truncate-marker",
+    "postTitle": "The Truncate Marker",
+    "tags": [
+        "Meta"
+    ],
+    "postDate": "2024-09-05T00:00:00.000Z",
+    "postBlurb": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n<!--truncate--><h2>Read more</h2>\n<p>Posts with a marker show a Read more link on the main list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Read more",
+            "headingUrlAnchor": "read-more"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "pageNumber": 2,
+    "pageCount": 2,
+    "posts": [
+        {
+            "postSlug": "2024-05-02-code-blocks",
+            "postTitle": "Code Blocks",
+            "tags": [
+                "Markdown",
+                "Styling"
+            ],
+            "postDate": "2024-05-02T00:00:00.000Z",
+            "postBlurb": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n",
+            "isTruncated": true
+        },
+        {
+            "postSlug": "2024-04-08-markdown-basics",
+            "postTitle": "Markdown Basics",
+            "tags": [
+                "Markdown",
+                "Meta"
+            ],
+            "postDate": "2024-04-08T00:00:00.000Z",
+            "postBlurb": "<p>Every post is a markdown file with front matter on top and a truncation marker in the middle.</p>\n",
+            "isTruncated": true
+        },
+        {
+            "postSlug": "2024-03-02-styling-with-vira",
+            "postTitle": "Styling with Vira",
+            "tags": [
+                "Vira",
+                "Styling"
+            ],
+            "postDate": "2024-03-02T00:00:00.000Z",
+            "postBlurb": "<p>Every color in this blog comes from the Vira color theme, so light and dark mode both work with no\nextra work from the site author.</p>\n",
+            "isTruncated": true
+        },
+        {
+            "postSlug": "2024-01-15-hello-blog-vir",
+            "postTitle": "Hello blog-vir",
+            "tags": [
+                "Meta",
+                "Intro"
+            ],
+            "postDate": "2024-01-15T00:00:00.000Z",
+            "postBlurb": "<p>This is the first post in the blog-vir demo site. Everything you see here was generated from a\ndirectory of markdown files.</p>\n",
+            "isTruncated": true
+        }
+    ]
+}

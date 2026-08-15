@@ -1,0 +1,23 @@
+{
+    "postSlug": "2025-07-16-slots",
+    "postTitle": "Slots",
+    "tags": [
+        "Ui"
+    ],
+    "postDate": "2025-07-16T00:00:00.000Z",
+    "postBlurb": "<p>The blog element exposes slots for the brand, the nav links, and the header right side.</p>\n<h2>Named slots</h2>\n<p>Slot names are declared on the element, so consumers never type raw strings.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "isTruncated": false,
+    "postContentHtml": "<p>The blog element exposes slots for the brand, the nav links, and the header right side.</p>\n<h2>Named slots</h2>\n<p>Slot names are declared on the element, so consumers never type raw strings.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Named slots",
+            "headingUrlAnchor": "named-slots"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

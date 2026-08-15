@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-05-02-code-blocks",
+    "postTitle": "Code Blocks",
+    "tags": [
+        "Markdown",
+        "Styling"
+    ],
+    "postDate": "2024-05-02T00:00:00.000Z",
+    "postBlurb": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n<!--truncate--><h2>Fences</h2>\n<p>Triple backticks open and close a block. Inline code uses single backticks.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Fences",
+            "headingUrlAnchor": "fences"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "postSlug": "2025-02-06-search-ranking",
+    "postTitle": "Search Ranking",
+    "tags": [
+        "Search"
+    ],
+    "postDate": "2025-02-06T00:00:00.000Z",
+    "postBlurb": "<p>A title match outranks a heading match, and a heading match outranks body text.</p>\n<h2>Scores</h2>\n<p>Every query word adds to a post score, so multi-word queries narrow the list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "isTruncated": false,
+    "postContentHtml": "<p>A title match outranks a heading match, and a heading match outranks body text.</p>\n<h2>Scores</h2>\n<p>Every query word adds to a post score, so multi-word queries narrow the list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Scores",
+            "headingUrlAnchor": "scores"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

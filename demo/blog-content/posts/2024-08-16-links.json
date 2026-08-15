@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-08-16-links",
+    "postTitle": "Links",
+    "tags": [
+        "Markdown",
+        "Routing"
+    ],
+    "postDate": "2024-08-16T00:00:00.000Z",
+    "postBlurb": "<p>Links to other posts stay in-page instead of triggering a full page load.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Links to other posts stay in-page instead of triggering a full page load.</p>\n<!--truncate--><h2>Internal links</h2>\n<p>A link whose path matches a post route is handled by the router.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Internal links",
+            "headingUrlAnchor": "internal-links"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

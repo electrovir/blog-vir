@@ -1,0 +1,506 @@
+[
+    {
+        "postSlug": "2025-08-27-deploying",
+        "postTitle": "Deploying",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Deploying is copying the built folder to a static host."
+    },
+    {
+        "postSlug": "2025-08-27-deploying",
+        "postTitle": "Deploying",
+        "headingUrlAnchor": "base-path",
+        "headingTitle": "Base path",
+        "sectionText": "The site base must match the build config or data fetches will miss."
+    },
+    {
+        "postSlug": "2025-08-27-deploying",
+        "postTitle": "Deploying",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-07-16-slots",
+        "postTitle": "Slots",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "The blog element exposes slots for the brand, the nav links, and the header right side."
+    },
+    {
+        "postSlug": "2025-07-16-slots",
+        "postTitle": "Slots",
+        "headingUrlAnchor": "named-slots",
+        "headingTitle": "Named slots",
+        "sectionText": "Slot names are declared on the element, so consumers never type raw strings."
+    },
+    {
+        "postSlug": "2025-07-16-slots",
+        "postTitle": "Slots",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-06-09-search-and-tags",
+        "postTitle": "Search and Tags",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Search runs entirely in the browser against a pre-built index, so there is no server to deploy."
+    },
+    {
+        "postSlug": "2025-06-09-search-and-tags",
+        "postTitle": "Search and Tags",
+        "headingUrlAnchor": "the-index",
+        "headingTitle": "The index",
+        "sectionText": "Each heading in each post becomes its own index entry. Searching for a word that only appears under one heading takes you straight to that heading rather than to the top of the post."
+    },
+    {
+        "postSlug": "2025-06-09-search-and-tags",
+        "postTitle": "Search and Tags",
+        "headingUrlAnchor": "tags",
+        "headingTitle": "Tags",
+        "sectionText": "Tags get their own pages. Every tag on a post is a link, and the tag list page shows how many posts carry each one."
+    },
+    {
+        "postSlug": "2025-05-09-pagination",
+        "postTitle": "Pagination",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "The main list shows twenty posts per page and pages are pre-generated."
+    },
+    {
+        "postSlug": "2025-05-09-pagination",
+        "postTitle": "Pagination",
+        "headingUrlAnchor": "newer-and-older",
+        "headingTitle": "Newer and older",
+        "sectionText": "The pager moves one page at a time and scrolls back to the top."
+    },
+    {
+        "postSlug": "2025-05-09-pagination",
+        "postTitle": "Pagination",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-04-11-fonts",
+        "postTitle": "Fonts",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Font weights and families come from Vira CSS variables."
+    },
+    {
+        "postSlug": "2025-04-11-fonts",
+        "postTitle": "Fonts",
+        "headingUrlAnchor": "overrides",
+        "headingTitle": "Overrides",
+        "sectionText": "A consumer can set those variables to restyle the blog without forking it."
+    },
+    {
+        "postSlug": "2025-04-11-fonts",
+        "postTitle": "Fonts",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-03-21-theming",
+        "postTitle": "Theming",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Colors come from the Vira theme, so light and dark modes both work."
+    },
+    {
+        "postSlug": "2025-03-21-theming",
+        "postTitle": "Theming",
+        "headingUrlAnchor": "one-palette",
+        "headingTitle": "One palette",
+        "sectionText": "Blog elements share a single palette object instead of hard coded hex values."
+    },
+    {
+        "postSlug": "2025-03-21-theming",
+        "postTitle": "Theming",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-02-28-keyboard-use",
+        "postTitle": "Keyboard Use",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Escape closes the search dropdown without clearing what was typed."
+    },
+    {
+        "postSlug": "2025-02-28-keyboard-use",
+        "postTitle": "Keyboard Use",
+        "headingUrlAnchor": "focus",
+        "headingTitle": "Focus",
+        "sectionText": "The input keeps focus while results update, so typing is never interrupted."
+    },
+    {
+        "postSlug": "2025-02-28-keyboard-use",
+        "postTitle": "Keyboard Use",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-02-06-search-ranking",
+        "postTitle": "Search Ranking",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "A title match outranks a heading match, and a heading match outranks body text."
+    },
+    {
+        "postSlug": "2025-02-06-search-ranking",
+        "postTitle": "Search Ranking",
+        "headingUrlAnchor": "scores",
+        "headingTitle": "Scores",
+        "sectionText": "Every query word adds to a post score, so multi-word queries narrow the list."
+    },
+    {
+        "postSlug": "2025-02-06-search-ranking",
+        "postTitle": "Search Ranking",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2025-01-14-the-search-index",
+        "postTitle": "The Search Index",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Search runs against a JSON index built at the same time as the pages."
+    },
+    {
+        "postSlug": "2025-01-14-the-search-index",
+        "postTitle": "The Search Index",
+        "headingUrlAnchor": "per-section",
+        "headingTitle": "Per section",
+        "sectionText": "Each heading becomes its own index entry, with the section text alongside it."
+    },
+    {
+        "postSlug": "2025-01-14-the-search-index",
+        "postTitle": "The Search Index",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-12-19-static-output",
+        "postTitle": "Static Output",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "The build writes plain JSON files plus one HTML entry point."
+    },
+    {
+        "postSlug": "2024-12-19-static-output",
+        "postTitle": "Static Output",
+        "headingUrlAnchor": "no-server",
+        "headingTitle": "No server",
+        "sectionText": "Any static host can serve the output, including GitHub Pages."
+    },
+    {
+        "postSlug": "2024-12-19-static-output",
+        "postTitle": "Static Output",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-11-30-routing",
+        "postTitle": "Routing",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Routes are declared once in a path tree, and unknown paths fall back to the main list."
+    },
+    {
+        "postSlug": "2024-11-30-routing",
+        "postTitle": "Routing",
+        "headingUrlAnchor": "path-tree",
+        "headingTitle": "Path tree",
+        "sectionText": "The tree is the single source of truth for which URLs exist."
+    },
+    {
+        "postSlug": "2024-11-30-routing",
+        "postTitle": "Routing",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-11-08-the-history-page",
+        "postTitle": "The History Page",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "The history page lists every post as one line: date then title."
+    },
+    {
+        "postSlug": "2024-11-08-the-history-page",
+        "postTitle": "The History Page",
+        "headingUrlAnchor": "whole-line-links",
+        "headingTitle": "Whole line links",
+        "sectionText": "The entire line is the link, so the click target is wide."
+    },
+    {
+        "postSlug": "2024-11-08-the-history-page",
+        "postTitle": "The History Page",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-10-18-tags",
+        "postTitle": "Tags",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "A post can carry any number of tags, and each one gets its own page."
+    },
+    {
+        "postSlug": "2024-10-18-tags",
+        "postTitle": "Tags",
+        "headingUrlAnchor": "title-casing",
+        "headingTitle": "Title casing",
+        "sectionText": "Tags are title cased during parsing so that ai and AI end up on one page."
+    },
+    {
+        "postSlug": "2024-10-18-tags",
+        "postTitle": "Tags",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-09-27-dates",
+        "postTitle": "Dates",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Post dates come from the front matter, not from the file system."
+    },
+    {
+        "postSlug": "2024-09-27-dates",
+        "postTitle": "Dates",
+        "headingUrlAnchor": "ordering",
+        "headingTitle": "Ordering",
+        "sectionText": "The main list is sorted newest first, and so is the history page."
+    },
+    {
+        "postSlug": "2024-09-27-dates",
+        "postTitle": "Dates",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-09-05-the-truncate-marker",
+        "postTitle": "The Truncate Marker",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "The truncate marker splits a post into its blurb and its full body."
+    },
+    {
+        "postSlug": "2024-09-05-the-truncate-marker",
+        "postTitle": "The Truncate Marker",
+        "headingUrlAnchor": "read-more",
+        "headingTitle": "Read more",
+        "sectionText": "Posts with a marker show a Read more link on the main list."
+    },
+    {
+        "postSlug": "2024-09-05-the-truncate-marker",
+        "postTitle": "The Truncate Marker",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-08-16-links",
+        "postTitle": "Links",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Links to other posts stay in-page instead of triggering a full page load."
+    },
+    {
+        "postSlug": "2024-08-16-links",
+        "postTitle": "Links",
+        "headingUrlAnchor": "internal-links",
+        "headingTitle": "Internal links",
+        "sectionText": "A link whose path matches a post route is handled by the router."
+    },
+    {
+        "postSlug": "2024-08-16-links",
+        "postTitle": "Links",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-07-29-lists",
+        "postTitle": "Lists",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Ordered and unordered lists both render with the browser default markers."
+    },
+    {
+        "postSlug": "2024-07-29-lists",
+        "postTitle": "Lists",
+        "headingUrlAnchor": "mixing",
+        "headingTitle": "Mixing",
+        "sectionText": "A list item can contain paragraphs, code blocks, and nested lists."
+    },
+    {
+        "postSlug": "2024-07-29-lists",
+        "postTitle": "Lists",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-07-03-images",
+        "postTitle": "Images",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Images live beside the markdown file and are copied into the built site."
+    },
+    {
+        "postSlug": "2024-07-03-images",
+        "postTitle": "Images",
+        "headingUrlAnchor": "sizing",
+        "headingTitle": "Sizing",
+        "sectionText": "Images scale down to the post width and never overflow it."
+    },
+    {
+        "postSlug": "2024-07-03-images",
+        "postTitle": "Images",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-06-14-headings-and-anchors",
+        "postTitle": "Headings and Anchors",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Every heading gets a URL anchor, which is also what search results link to."
+    },
+    {
+        "postSlug": "2024-06-14-headings-and-anchors",
+        "postTitle": "Headings and Anchors",
+        "headingUrlAnchor": "slugs",
+        "headingTitle": "Slugs",
+        "sectionText": "Anchor slugs come from the heading text, lowercased with punctuation dropped."
+    },
+    {
+        "postSlug": "2024-06-14-headings-and-anchors",
+        "postTitle": "Headings and Anchors",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-05-21-block-quotes",
+        "postTitle": "Block Quotes",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Quotes render with a vertical bar on the left instead of a background fill."
+    },
+    {
+        "postSlug": "2024-05-21-block-quotes",
+        "postTitle": "Block Quotes",
+        "headingUrlAnchor": "nesting",
+        "headingTitle": "Nesting",
+        "sectionText": "Quotes can hold lists and code, and they can nest inside each other."
+    },
+    {
+        "postSlug": "2024-05-21-block-quotes",
+        "postTitle": "Block Quotes",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-05-02-code-blocks",
+        "postTitle": "Code Blocks",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Fenced code blocks get a grey background and keep their whitespace."
+    },
+    {
+        "postSlug": "2024-05-02-code-blocks",
+        "postTitle": "Code Blocks",
+        "headingUrlAnchor": "fences",
+        "headingTitle": "Fences",
+        "sectionText": "Triple backticks open and close a block. Inline code uses single backticks."
+    },
+    {
+        "postSlug": "2024-05-02-code-blocks",
+        "postTitle": "Code Blocks",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-04-08-markdown-basics",
+        "postTitle": "Markdown Basics",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Every post is a markdown file with front matter on top and a truncation marker in the middle."
+    },
+    {
+        "postSlug": "2024-04-08-markdown-basics",
+        "postTitle": "Markdown Basics",
+        "headingUrlAnchor": "front-matter",
+        "headingTitle": "Front matter",
+        "sectionText": "The title, date, and tags come from the front matter block. Everything after it is the post body."
+    },
+    {
+        "postSlug": "2024-04-08-markdown-basics",
+        "postTitle": "Markdown Basics",
+        "headingUrlAnchor": "notes",
+        "headingTitle": "Notes",
+        "sectionText": "This post exists so the demo has enough content to paginate the main list."
+    },
+    {
+        "postSlug": "2024-03-02-styling-with-vira",
+        "postTitle": "Styling with Vira",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "Every color in this blog comes from the Vira color theme, so light and dark mode both work with no extra work from the site author."
+    },
+    {
+        "postSlug": "2024-03-02-styling-with-vira",
+        "postTitle": "Styling with Vira",
+        "headingUrlAnchor": "color-pairs",
+        "headingTitle": "Color pairs",
+        "sectionText": "Vira colors come in pairs: a foreground and a background chosen together to hit a specific contrast level. Picking a pair instead of two separate colors is what keeps text legible in both themes. ```ts import {viraTheme} from 'vira'; const muted = viraTheme.colors['vira-grey-foreground-body'].foreground.value; ```"
+    },
+    {
+        "postSlug": "2024-03-02-styling-with-vira",
+        "postTitle": "Styling with Vira",
+        "headingUrlAnchor": "elements",
+        "headingTitle": "Elements",
+        "sectionText": "Tags, buttons, inputs, and links are all Vira elements, so they pick up theme changes immediately. > Flip the theme with the switcher in the header to see it happen."
+    },
+    {
+        "postSlug": "2024-01-15-hello-blog-vir",
+        "postTitle": "Hello blog-vir",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "This is the first post in the blog-vir demo site. Everything you see here was generated from a directory of markdown files."
+    },
+    {
+        "postSlug": "2024-01-15-hello-blog-vir",
+        "postTitle": "Hello blog-vir",
+        "headingUrlAnchor": "how-it-works",
+        "headingTitle": "How it works",
+        "sectionText": "The `blog-vir` CLI reads every `.md` file under a posts directory, renders it to HTML, and writes a set of JSON files into the Vite static directory. The browser then fetches only the JSON it needs for the current page."
+    },
+    {
+        "postSlug": "2024-01-15-hello-blog-vir",
+        "postTitle": "Hello blog-vir",
+        "headingUrlAnchor": "why-json",
+        "headingTitle": "Why JSON",
+        "sectionText": "Shipping one JSON file per post keeps the initial page small. A blog with a thousand posts loads exactly as fast as a blog with three."
+    }
+]

@@ -1,0 +1,24 @@
+{
+    "postSlug": "2025-06-09-search-and-tags",
+    "postTitle": "Search and Tags",
+    "tags": [
+        "Meta",
+        "Search"
+    ],
+    "postDate": "2025-06-09T00:00:00.000Z",
+    "postBlurb": "<p>Search runs entirely in the browser against a pre-built index, so there is no server to deploy.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Search runs entirely in the browser against a pre-built index, so there is no server to deploy.</p>\n<!--truncate--><h2>The index</h2>\n<p>Each heading in each post becomes its own index entry. Searching for a word that only appears under\none heading takes you straight to that heading rather than to the top of the post.</p>\n<h2>Tags</h2>\n<p>Tags get their own pages. Every tag on a post is a link, and the tag list page shows how many posts\ncarry each one.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "The index",
+            "headingUrlAnchor": "the-index"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Tags",
+            "headingUrlAnchor": "tags"
+        }
+    ]
+}

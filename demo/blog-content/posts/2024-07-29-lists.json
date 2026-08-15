@@ -1,0 +1,23 @@
+{
+    "postSlug": "2024-07-29-lists",
+    "postTitle": "Lists",
+    "tags": [
+        "Markdown"
+    ],
+    "postDate": "2024-07-29T00:00:00.000Z",
+    "postBlurb": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n<!--truncate--><h2>Mixing</h2>\n<p>A list item can contain paragraphs, code blocks, and nested lists.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Mixing",
+            "headingUrlAnchor": "mixing"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

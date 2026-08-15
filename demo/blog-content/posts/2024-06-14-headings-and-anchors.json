@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-06-14-headings-and-anchors",
+    "postTitle": "Headings and Anchors",
+    "tags": [
+        "Markdown",
+        "Search"
+    ],
+    "postDate": "2024-06-14T00:00:00.000Z",
+    "postBlurb": "<p>Every heading gets a URL anchor, which is also what search results link to.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Every heading gets a URL anchor, which is also what search results link to.</p>\n<!--truncate--><h2>Slugs</h2>\n<p>Anchor slugs come from the heading text, lowercased with punctuation dropped.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Slugs",
+            "headingUrlAnchor": "slugs"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "postSlug": "2025-02-28-keyboard-use",
+    "postTitle": "Keyboard Use",
+    "tags": [
+        "Search",
+        "Ui"
+    ],
+    "postDate": "2025-02-28T00:00:00.000Z",
+    "postBlurb": "<p>Escape closes the search dropdown without clearing what was typed.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Escape closes the search dropdown without clearing what was typed.</p>\n<!--truncate--><h2>Focus</h2>\n<p>The input keeps focus while results update, so typing is never interrupted.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Focus",
+            "headingUrlAnchor": "focus"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

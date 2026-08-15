@@ -1,0 +1,24 @@
+{
+    "postSlug": "2024-05-21-block-quotes",
+    "postTitle": "Block Quotes",
+    "tags": [
+        "Markdown",
+        "Styling"
+    ],
+    "postDate": "2024-05-21T00:00:00.000Z",
+    "postBlurb": "<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n<!--truncate--><h2>Nesting</h2>\n<p>Quotes can hold lists and code, and they can nest inside each other.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Nesting",
+            "headingUrlAnchor": "nesting"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}

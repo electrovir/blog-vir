@@ -1,0 +1,24 @@
+{
+    "postSlug": "2025-05-09-pagination",
+    "postTitle": "Pagination",
+    "tags": [
+        "Ui",
+        "Build"
+    ],
+    "postDate": "2025-05-09T00:00:00.000Z",
+    "postBlurb": "<p>The main list shows twenty posts per page and pages are pre-generated.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>The main list shows twenty posts per page and pages are pre-generated.</p>\n<!--truncate--><h2>Newer and older</h2>\n<p>The pager moves one page at a time and scrolls back to the top.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postHeadings": [
+        {
+            "headingLevel": 2,
+            "headingTitle": "Newer and older",
+            "headingUrlAnchor": "newer-and-older"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Notes",
+            "headingUrlAnchor": "notes"
+        }
+    ]
+}
