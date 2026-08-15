@@ -3,6 +3,17 @@
     "pageCount": 2,
     "posts": [
         {
+            "postSlug": "2025-09-12-markdown-elements",
+            "postTitle": "Markdown Elements",
+            "tags": [
+                "markdown",
+                "styling"
+            ],
+            "postDate": "2025-09-12T00:00:00.000Z",
+            "postBlurb": "<p>This post shows the Markdown elements rendered by blog-vir: text formatting, links, lists, quotes, code, tables, images, and HTML.</p>\n",
+            "isTruncated": true
+        },
+        {
             "postSlug": "2025-08-27-deploying",
             "postTitle": "Deploying",
             "tags": [
@@ -200,17 +211,6 @@
             ],
             "postDate": "2024-06-14T00:00:00.000Z",
             "postBlurb": "<p>Every heading gets a URL anchor, which is also what search results link to.</p>\n",
-            "isTruncated": true
-        },
-        {
-            "postSlug": "2024-05-21-block-quotes",
-            "postTitle": "Block Quotes",
-            "tags": [
-                "markdown",
-                "styling"
-            ],
-            "postDate": "2024-05-21T00:00:00.000Z",
-            "postBlurb": "<blockquote>\n<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n</blockquote>\n",
             "isTruncated": true
         }
     ]

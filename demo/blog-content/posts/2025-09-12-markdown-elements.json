@@ -1,0 +1,79 @@
+{
+    "postSlug": "2025-09-12-markdown-elements",
+    "postTitle": "Markdown Elements",
+    "tags": [
+        "markdown",
+        "styling"
+    ],
+    "postDate": "2025-09-12T00:00:00.000Z",
+    "postBlurb": "<p>This post shows the Markdown elements rendered by blog-vir: text formatting, links, lists, quotes, code, tables, images, and HTML.</p>\n",
+    "isTruncated": true,
+    "postContentHtml": "<p>This post shows the Markdown elements rendered by blog-vir: text formatting, links, lists, quotes, code, tables, images, and HTML.</p>\n<!--truncate--><h1>Heading Level One</h1>\n<h2>Heading Level Two</h2>\n<h3>Heading Level Three</h3>\n<h4>Heading Level Four</h4>\n<h5>Heading Level Five</h5>\n<h6>Heading Level Six</h6>\n<h2>Text and Links</h2>\n<p>This paragraph has <em>emphasis</em>, <strong>strong text</strong>, <strong><em>both together</em></strong>, <del>deleted text</del>, and <code>inline code</code>. Escaped Markdown keeps a literal *asterisk*.<br>The preceding sentence ends with a hard line break.</p>\n<p>This has an <a href=\"https://github.com/electrovir/blog-vir\" title=\"blog-vir repository\">inline link</a>, a bare <a href=\"https://example.com\">https://example.com</a> URL, and a <a href=\"https://github.com/electrovir/blog-vir\">reference link</a>.</p>\n<h2>Lists</h2>\n<ul>\n<li>Unordered item<ul>\n<li>Nested unordered item</li>\n<li>Another nested item</li>\n</ul>\n</li>\n<li>Final unordered item</li>\n</ul>\n<ol>\n<li>Ordered item<ol>\n<li>Nested ordered item</li>\n<li>Another nested item</li>\n</ol>\n</li>\n<li>Final ordered item</li>\n</ol>\n<ul>\n<li><input checked=\"\" disabled=\"\" type=\"checkbox\"> Completed task</li>\n<li><input disabled=\"\" type=\"checkbox\"> Remaining task</li>\n</ul>\n<h2>Quotes</h2>\n<blockquote>\n<p>A block quote can contain <em>formatted text</em>, a list, and another quote.</p>\n<ul>\n<li>Quoted list item</li>\n<li>Another quoted item</li>\n</ul>\n<blockquote>\n<p>This is a nested quote.</p>\n</blockquote>\n</blockquote>\n<h2>Code</h2>\n<p>An indented code block:</p>\n<pre><code>const indentedCode = true;\n</code></pre>\n<p>A fenced code block:</p>\n<pre><code class=\"language-ts\">const message = &#39;Fenced code keeps its language label.&#39;;\n</code></pre>\n<h2>Table</h2>\n<table>\n<thead>\n<tr>\n<th align=\"left\">Left aligned</th>\n<th align=\"center\">Center aligned</th>\n<th align=\"right\">Right aligned</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">Markdown</td>\n<td align=\"center\">tables</td>\n<td align=\"right\">1</td>\n</tr>\n<tr>\n<td align=\"left\">Have borders</td>\n<td align=\"center\">striped rows</td>\n<td align=\"right\">2</td>\n</tr>\n<tr>\n<td align=\"left\">And alignment</td>\n<td align=\"center\">is preserved</td>\n<td align=\"right\">3</td>\n</tr>\n</tbody></table>\n<h2>Image</h2>\n<p><img src=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80\" alt=\"Snowy mountains under a blue sky\" title=\"Mountain landscape\"></p>\n<hr>\n<h2>HTML</h2>\n<details>\n<summary>Open this native HTML disclosure.</summary><p>Raw HTML is rendered alongside Markdown when the blog author needs an element Markdown does not provide.</p>\n</details>",
+    "postHeadings": [
+        {
+            "headingLevel": 1,
+            "headingTitle": "Heading Level One",
+            "headingUrlAnchor": "heading-level-one"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Heading Level Two",
+            "headingUrlAnchor": "heading-level-two"
+        },
+        {
+            "headingLevel": 3,
+            "headingTitle": "Heading Level Three",
+            "headingUrlAnchor": "heading-level-three"
+        },
+        {
+            "headingLevel": 4,
+            "headingTitle": "Heading Level Four",
+            "headingUrlAnchor": "heading-level-four"
+        },
+        {
+            "headingLevel": 5,
+            "headingTitle": "Heading Level Five",
+            "headingUrlAnchor": "heading-level-five"
+        },
+        {
+            "headingLevel": 6,
+            "headingTitle": "Heading Level Six",
+            "headingUrlAnchor": "heading-level-six"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Text and Links",
+            "headingUrlAnchor": "text-and-links"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Lists",
+            "headingUrlAnchor": "lists"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Quotes",
+            "headingUrlAnchor": "quotes"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Code",
+            "headingUrlAnchor": "code"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Table",
+            "headingUrlAnchor": "table"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "Image",
+            "headingUrlAnchor": "image"
+        },
+        {
+            "headingLevel": 2,
+            "headingTitle": "HTML",
+            "headingUrlAnchor": "html"
+        }
+    ]
+}

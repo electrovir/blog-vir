@@ -1107,6 +1107,21 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
             margin-left: 0;
         }
 
+        & table {
+            border-collapse: collapse;
+
+            & th,
+            & td {
+                border: 1px solid
+                    ${Z.colors[`vira-grey-foreground-decoration`].foreground.value};
+                padding: 8px 12px;
+            }
+
+            & tbody tr:nth-child(odd) {
+                background-color: ${Z.colors[`vira-grey-behind-fg-highest-contrast`].background.value};
+            }
+        }
+
         & img {
             max-width: 100%;
             height: auto;

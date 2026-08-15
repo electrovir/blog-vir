@@ -1,5 +1,103 @@
 [
     {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "",
+        "headingTitle": "",
+        "sectionText": "This post shows the Markdown elements rendered by blog-vir: text formatting, links, lists, quotes, code, tables, images, and HTML."
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-one",
+        "headingTitle": "Heading Level One",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-two",
+        "headingTitle": "Heading Level Two",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-three",
+        "headingTitle": "Heading Level Three",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-four",
+        "headingTitle": "Heading Level Four",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-five",
+        "headingTitle": "Heading Level Five",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "heading-level-six",
+        "headingTitle": "Heading Level Six",
+        "sectionText": ""
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "text-and-links",
+        "headingTitle": "Text and Links",
+        "sectionText": "This paragraph has _emphasis_, **strong text**, **_both together_**, ~~deleted text~~, and `inline code`. Escaped Markdown keeps a literal \\*asterisk\\*. The preceding sentence ends with a hard line break. This has an [inline link](https://github.com/electrovir/blog-vir 'blog-vir repository'), a bare https://example.com URL, and a [reference link][repository]."
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "lists",
+        "headingTitle": "Lists",
+        "sectionText": "- Unordered item - Nested unordered item - Another nested item - Final unordered item 1. Ordered item 1. Nested ordered item 2. Another nested item 2. Final ordered item - [x] Completed task - [ ] Remaining task"
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "quotes",
+        "headingTitle": "Quotes",
+        "sectionText": "> A block quote can contain _formatted text_, a list, and another quote. > > - Quoted list item > - Another quoted item > > > This is a nested quote."
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "code",
+        "headingTitle": "Code",
+        "sectionText": "An indented code block: const indentedCode = true; A fenced code block: ```ts const message = 'Fenced code keeps its language label.'; ```"
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "table",
+        "headingTitle": "Table",
+        "sectionText": "| Left aligned | Center aligned | Right aligned | | :------------ | :------------: | ------------: | | Markdown | tables | 1 | | Have borders | striped rows | 2 | | And alignment | is preserved | 3 |"
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "image",
+        "headingTitle": "Image",
+        "sectionText": "![Snowy mountains under a blue sky](https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80 'Mountain landscape') ---"
+    },
+    {
+        "postSlug": "2025-09-12-markdown-elements",
+        "postTitle": "Markdown Elements",
+        "headingUrlAnchor": "html",
+        "headingTitle": "HTML",
+        "sectionText": "Open this native HTML disclosure. Raw HTML is rendered alongside Markdown when the blog author needs an element Markdown does not provide. [repository]: https://github.com/electrovir/blog-vir"
+    },
+    {
         "postSlug": "2025-08-27-deploying",
         "postTitle": "Deploying",
         "headingUrlAnchor": "",

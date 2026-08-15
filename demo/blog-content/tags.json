@@ -1,12 +1,12 @@
 {
+    "markdown": 8,
+    "styling": 6,
     "build": 4,
     "ui": 3,
     "meta": 7,
     "search": 5,
-    "styling": 5,
     "vira": 3,
     "routing": 3,
     "tags": 1,
-    "markdown": 7,
     "intro": 1
 }

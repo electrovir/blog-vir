@@ -3,6 +3,17 @@
     "pageCount": 2,
     "posts": [
         {
+            "postSlug": "2024-05-21-block-quotes",
+            "postTitle": "Block Quotes",
+            "tags": [
+                "markdown",
+                "styling"
+            ],
+            "postDate": "2024-05-21T00:00:00.000Z",
+            "postBlurb": "<blockquote>\n<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n</blockquote>\n",
+            "isTruncated": true
+        },
+        {
             "postSlug": "2024-05-02-code-blocks",
             "postTitle": "Code Blocks",
             "tags": [
