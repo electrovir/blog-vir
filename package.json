@@ -1,6 +1,6 @@
 {
     "name": "@blog-vir/mono-root",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "private": true,
     "homepage": "https://github.com/electrovir/blog-vir",
     "bugs": {
@@ -21,7 +21,9 @@
         "packages/*"
     ],
     "scripts": {
+        "build": "bash scripts/build.sh",
         "compile": "virmator compile",
+        "docs": "npm run docs --workspace blog-vir",
         "format": "virmator format",
         "lint": "virmator lint fix",
         "publish": "virmator publish npm run test:all",
