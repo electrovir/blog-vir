@@ -1,7 +1,7 @@
 import {createUtcFullDate, toHttpDateString} from 'date-vir';
 import {defineShape, nonEmptyStringShape} from 'object-shape-tester';
-import {type UrlParts, buildUrl, isValidUrl} from 'url-vir';
-import {type BlogPost} from '../data/blog-post.js';
+import {buildUrl, isValidUrl, type UrlParts} from 'url-vir';
+import {compareBlogPostsNewestFirst, type BlogPost} from '../data/blog-post.js';
 import {blogPathTree} from '../ui/routing/blog-route.js';
 
 /**
@@ -42,7 +42,10 @@ export function generateRssFeed({
 
     const siteUrl = validateRssSiteUrl(config.siteUrl);
     const sortedPosts = posts.toSorted((firstPost, secondPost) => {
-        return secondPost.postDate.localeCompare(firstPost.postDate);
+        return compareBlogPostsNewestFirst({
+            firstBlogPost: firstPost,
+            secondBlogPost: secondPost,
+        });
     });
     const latestPost = sortedPosts[0];
 

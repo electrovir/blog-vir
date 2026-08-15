@@ -64,6 +64,24 @@ export const blogPostShape = defineShape({
 export type BlogPost = (typeof blogPostShape)['runtimeType'];
 
 /**
+ * Compare posts with newest posts first, using descending slugs to break equal-date ties.
+ *
+ * @category Internal
+ */
+export function compareBlogPostsNewestFirst({
+    firstBlogPost,
+    secondBlogPost,
+}: Readonly<{
+    firstBlogPost: Readonly<Pick<BlogPost, 'postDate' | 'postSlug'>>;
+    secondBlogPost: Readonly<Pick<BlogPost, 'postDate' | 'postSlug'>>;
+}>) {
+    return (
+        secondBlogPost.postDate.localeCompare(firstBlogPost.postDate) ||
+        secondBlogPost.postSlug.localeCompare(firstBlogPost.postSlug)
+    );
+}
+
+/**
  * Runtime shape for {@link BlogPostListing}.
  *
  * @category Internal

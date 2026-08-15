@@ -20,6 +20,7 @@ import {
     createBlogTagJsonPath,
 } from '../data/blog-paths.js';
 import {
+    compareBlogPostsNewestFirst,
     type BlogAllPosts,
     type BlogPost,
     type BlogPostPage,
@@ -102,8 +103,11 @@ export async function generateStaticBlog({
         }
     });
 
-    const sortedBlogPosts = parsed.toSorted((a, b) => {
-        return b.post.postDate.localeCompare(a.post.postDate);
+    const sortedBlogPosts = parsed.toSorted((firstBlogPost, secondBlogPost) => {
+        return compareBlogPostsNewestFirst({
+            firstBlogPost: firstBlogPost.post,
+            secondBlogPost: secondBlogPost.post,
+        });
     });
     const tagPostSlugs = buildTagPostSlugs(sortedBlogPosts);
 
