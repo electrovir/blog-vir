@@ -12,7 +12,7 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-08-27-deploying</guid>
             <pubDate>Wed, 27 Aug 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Deploying is copying the built folder to a static host.&lt;/p&gt;</description>
-            <category>Build</category>
+            <category>build</category>
         </item>
         <item>
             <title>Slots</title>
@@ -24,7 +24,7 @@
 &lt;p&gt;Slot names are declared on the element, so consumers never type raw strings.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Ui</category>
+            <category>ui</category>
         </item>
         <item>
             <title>Search and Tags</title>
@@ -32,8 +32,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-06-09-search-and-tags</guid>
             <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Search runs entirely in the browser against a pre-built index, so there is no server to deploy.&lt;/p&gt;</description>
-            <category>Meta</category>
-            <category>Search</category>
+            <category>meta</category>
+            <category>search</category>
         </item>
         <item>
             <title>Pagination</title>
@@ -41,8 +41,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-05-09-pagination</guid>
             <pubDate>Fri, 09 May 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;The main list shows twenty posts per page and pages are pre-generated.&lt;/p&gt;</description>
-            <category>Ui</category>
-            <category>Build</category>
+            <category>ui</category>
+            <category>build</category>
         </item>
         <item>
             <title>Fonts</title>
@@ -54,8 +54,8 @@
 &lt;p&gt;A consumer can set those variables to restyle the blog without forking it.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Styling</category>
-            <category>Vira</category>
+            <category>styling</category>
+            <category>vira</category>
         </item>
         <item>
             <title>Theming</title>
@@ -63,8 +63,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-03-21-theming</guid>
             <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Colors come from the Vira theme, so light and dark modes both work.&lt;/p&gt;</description>
-            <category>Styling</category>
-            <category>Vira</category>
+            <category>styling</category>
+            <category>vira</category>
         </item>
         <item>
             <title>Keyboard Use</title>
@@ -72,8 +72,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-02-28-keyboard-use</guid>
             <pubDate>Fri, 28 Feb 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Escape closes the search dropdown without clearing what was typed.&lt;/p&gt;</description>
-            <category>Search</category>
-            <category>Ui</category>
+            <category>search</category>
+            <category>ui</category>
         </item>
         <item>
             <title>Search Ranking</title>
@@ -85,7 +85,7 @@
 &lt;p&gt;Every query word adds to a post score, so multi-word queries narrow the list.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Search</category>
+            <category>search</category>
         </item>
         <item>
             <title>The Search Index</title>
@@ -93,8 +93,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-01-14-the-search-index</guid>
             <pubDate>Tue, 14 Jan 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Search runs against a JSON index built at the same time as the pages.&lt;/p&gt;</description>
-            <category>Search</category>
-            <category>Build</category>
+            <category>search</category>
+            <category>build</category>
         </item>
         <item>
             <title>Static Output</title>
@@ -102,7 +102,7 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-12-19-static-output</guid>
             <pubDate>Thu, 19 Dec 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;The build writes plain JSON files plus one HTML entry point.&lt;/p&gt;</description>
-            <category>Build</category>
+            <category>build</category>
         </item>
         <item>
             <title>Routing</title>
@@ -114,7 +114,7 @@
 &lt;p&gt;The tree is the single source of truth for which URLs exist.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Routing</category>
+            <category>routing</category>
         </item>
         <item>
             <title>The History Page</title>
@@ -122,8 +122,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-11-08-the-history-page</guid>
             <pubDate>Fri, 08 Nov 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;The history page lists every post as one line: date then title.&lt;/p&gt;</description>
-            <category>Meta</category>
-            <category>Routing</category>
+            <category>meta</category>
+            <category>routing</category>
         </item>
         <item>
             <title>Tags</title>
@@ -131,8 +131,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-10-18-tags</guid>
             <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;A post can carry any number of tags, and each one gets its own page.&lt;/p&gt;</description>
-            <category>Meta</category>
-            <category>Tags</category>
+            <category>meta</category>
+            <category>tags</category>
         </item>
         <item>
             <title>Dates</title>
@@ -144,7 +144,7 @@
 &lt;p&gt;The main list is sorted newest first, and so is the history page.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Meta</category>
+            <category>meta</category>
         </item>
         <item>
             <title>The Truncate Marker</title>
@@ -152,7 +152,7 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-09-05-the-truncate-marker</guid>
             <pubDate>Thu, 05 Sep 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;The truncate marker splits a post into its blurb and its full body.&lt;/p&gt;</description>
-            <category>Meta</category>
+            <category>meta</category>
         </item>
         <item>
             <title>Links</title>
@@ -160,8 +160,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-08-16-links</guid>
             <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Links to other posts stay in-page instead of triggering a full page load.&lt;/p&gt;</description>
-            <category>Markdown</category>
-            <category>Routing</category>
+            <category>markdown</category>
+            <category>routing</category>
         </item>
         <item>
             <title>Lists</title>
@@ -169,7 +169,7 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-07-29-lists</guid>
             <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Ordered and unordered lists both render with the browser default markers.&lt;/p&gt;</description>
-            <category>Markdown</category>
+            <category>markdown</category>
         </item>
         <item>
             <title>Images</title>
@@ -181,7 +181,7 @@
 &lt;p&gt;Images scale down to the post width and never overflow it.&lt;/p&gt;
 &lt;h2&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
-            <category>Markdown</category>
+            <category>markdown</category>
         </item>
         <item>
             <title>Headings and Anchors</title>
@@ -189,8 +189,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-06-14-headings-and-anchors</guid>
             <pubDate>Fri, 14 Jun 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Every heading gets a URL anchor, which is also what search results link to.&lt;/p&gt;</description>
-            <category>Markdown</category>
-            <category>Search</category>
+            <category>markdown</category>
+            <category>search</category>
         </item>
         <item>
             <title>Block Quotes</title>
@@ -198,8 +198,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-05-21-block-quotes</guid>
             <pubDate>Tue, 21 May 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Quotes render with a vertical bar on the left instead of a background fill.&lt;/p&gt;</description>
-            <category>Markdown</category>
-            <category>Styling</category>
+            <category>markdown</category>
+            <category>styling</category>
         </item>
         <item>
             <title>Code Blocks</title>
@@ -207,8 +207,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-05-02-code-blocks</guid>
             <pubDate>Thu, 02 May 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Fenced code blocks get a grey background and keep their whitespace.&lt;/p&gt;</description>
-            <category>Markdown</category>
-            <category>Styling</category>
+            <category>markdown</category>
+            <category>styling</category>
         </item>
         <item>
             <title>Markdown Basics</title>
@@ -216,8 +216,8 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-04-08-markdown-basics</guid>
             <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Every post is a markdown file with front matter on top and a truncation marker in the middle.&lt;/p&gt;</description>
-            <category>Markdown</category>
-            <category>Meta</category>
+            <category>markdown</category>
+            <category>meta</category>
         </item>
         <item>
             <title>Styling with Vira</title>
@@ -226,8 +226,8 @@
             <pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Every color in this blog comes from the Vira color theme, so light and dark mode both work with no
 extra work from the site author.&lt;/p&gt;</description>
-            <category>Vira</category>
-            <category>Styling</category>
+            <category>vira</category>
+            <category>styling</category>
         </item>
         <item>
             <title>Hello blog-vir</title>
@@ -236,8 +236,8 @@ extra work from the site author.&lt;/p&gt;</description>
             <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;This is the first post in the blog-vir demo site. Everything you see here was generated from a
 directory of markdown files.&lt;/p&gt;</description>
-            <category>Meta</category>
-            <category>Intro</category>
+            <category>meta</category>
+            <category>intro</category>
         </item>
     </channel>
 </rss>

@@ -2,8 +2,8 @@
     "postSlug": "2024-01-15-hello-blog-vir",
     "postTitle": "Hello blog-vir",
     "tags": [
-        "Meta",
-        "Intro"
+        "meta",
+        "intro"
     ],
     "postDate": "2024-01-15T00:00:00.000Z",
     "postBlurb": "<p>This is the first post in the blog-vir demo site. Everything you see here was generated from a\ndirectory of markdown files.</p>\n",

@@ -2,7 +2,7 @@
     "postSlug": "2024-11-30-routing",
     "postTitle": "Routing",
     "tags": [
-        "Routing"
+        "routing"
     ],
     "postDate": "2024-11-30T00:00:00.000Z",
     "postBlurb": "<p>Routes are declared once in a path tree, and unknown paths fall back to the main list.</p>\n<h2>Path tree</h2>\n<p>The tree is the single source of truth for which URLs exist.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",

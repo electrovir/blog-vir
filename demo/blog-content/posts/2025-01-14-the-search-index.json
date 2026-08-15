@@ -2,8 +2,8 @@
     "postSlug": "2025-01-14-the-search-index",
     "postTitle": "The Search Index",
     "tags": [
-        "Search",
-        "Build"
+        "search",
+        "build"
     ],
     "postDate": "2025-01-14T00:00:00.000Z",
     "postBlurb": "<p>Search runs against a JSON index built at the same time as the pages.</p>\n",

@@ -2,8 +2,8 @@
     "postSlug": "2025-05-09-pagination",
     "postTitle": "Pagination",
     "tags": [
-        "Ui",
-        "Build"
+        "ui",
+        "build"
     ],
     "postDate": "2025-05-09T00:00:00.000Z",
     "postBlurb": "<p>The main list shows twenty posts per page and pages are pre-generated.</p>\n",

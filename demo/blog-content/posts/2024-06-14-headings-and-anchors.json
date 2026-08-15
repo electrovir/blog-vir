@@ -2,8 +2,8 @@
     "postSlug": "2024-06-14-headings-and-anchors",
     "postTitle": "Headings and Anchors",
     "tags": [
-        "Markdown",
-        "Search"
+        "markdown",
+        "search"
     ],
     "postDate": "2024-06-14T00:00:00.000Z",
     "postBlurb": "<p>Every heading gets a URL anchor, which is also what search results link to.</p>\n",

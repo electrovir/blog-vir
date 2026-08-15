@@ -2,7 +2,7 @@
     "postSlug": "2024-12-19-static-output",
     "postTitle": "Static Output",
     "tags": [
-        "Build"
+        "build"
     ],
     "postDate": "2024-12-19T00:00:00.000Z",
     "postBlurb": "<p>The build writes plain JSON files plus one HTML entry point.</p>\n",

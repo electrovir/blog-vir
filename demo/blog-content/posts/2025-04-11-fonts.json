@@ -2,8 +2,8 @@
     "postSlug": "2025-04-11-fonts",
     "postTitle": "Fonts",
     "tags": [
-        "Styling",
-        "Vira"
+        "styling",
+        "vira"
     ],
     "postDate": "2025-04-11T00:00:00.000Z",
     "postBlurb": "<p>Font weights and families come from Vira CSS variables.</p>\n<h2>Overrides</h2>\n<p>A consumer can set those variables to restyle the blog without forking it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",

@@ -2,7 +2,7 @@
     "postSlug": "2024-07-03-images",
     "postTitle": "Images",
     "tags": [
-        "Markdown"
+        "markdown"
     ],
     "postDate": "2024-07-03T00:00:00.000Z",
     "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",

@@ -2,8 +2,8 @@
     "postSlug": "2024-05-21-block-quotes",
     "postTitle": "Block Quotes",
     "tags": [
-        "Markdown",
-        "Styling"
+        "markdown",
+        "styling"
     ],
     "postDate": "2024-05-21T00:00:00.000Z",
     "postBlurb": "<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n",

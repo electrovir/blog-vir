@@ -2,8 +2,8 @@
     "postSlug": "2024-08-16-links",
     "postTitle": "Links",
     "tags": [
-        "Markdown",
-        "Routing"
+        "markdown",
+        "routing"
     ],
     "postDate": "2024-08-16T00:00:00.000Z",
     "postBlurb": "<p>Links to other posts stay in-page instead of triggering a full page load.</p>\n",

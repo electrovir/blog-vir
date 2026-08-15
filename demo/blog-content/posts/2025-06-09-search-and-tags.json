@@ -2,8 +2,8 @@
     "postSlug": "2025-06-09-search-and-tags",
     "postTitle": "Search and Tags",
     "tags": [
-        "Meta",
-        "Search"
+        "meta",
+        "search"
     ],
     "postDate": "2025-06-09T00:00:00.000Z",
     "postBlurb": "<p>Search runs entirely in the browser against a pre-built index, so there is no server to deploy.</p>\n",

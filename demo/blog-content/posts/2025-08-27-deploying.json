@@ -2,7 +2,7 @@
     "postSlug": "2025-08-27-deploying",
     "postTitle": "Deploying",
     "tags": [
-        "Build"
+        "build"
     ],
     "postDate": "2025-08-27T00:00:00.000Z",
     "postBlurb": "<p>Deploying is copying the built folder to a static host.</p>\n",

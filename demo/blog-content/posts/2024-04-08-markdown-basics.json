@@ -2,8 +2,8 @@
     "postSlug": "2024-04-08-markdown-basics",
     "postTitle": "Markdown Basics",
     "tags": [
-        "Markdown",
-        "Meta"
+        "markdown",
+        "meta"
     ],
     "postDate": "2024-04-08T00:00:00.000Z",
     "postBlurb": "<p>Every post is a markdown file with front matter on top and a truncation marker in the middle.</p>\n",

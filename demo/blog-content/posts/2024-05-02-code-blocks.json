@@ -2,8 +2,8 @@
     "postSlug": "2024-05-02-code-blocks",
     "postTitle": "Code Blocks",
     "tags": [
-        "Markdown",
-        "Styling"
+        "markdown",
+        "styling"
     ],
     "postDate": "2024-05-02T00:00:00.000Z",
     "postBlurb": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n",

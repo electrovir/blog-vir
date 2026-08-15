@@ -2,8 +2,8 @@
     "postSlug": "2024-11-08-the-history-page",
     "postTitle": "The History Page",
     "tags": [
-        "Meta",
-        "Routing"
+        "meta",
+        "routing"
     ],
     "postDate": "2024-11-08T00:00:00.000Z",
     "postBlurb": "<p>The history page lists every post as one line: date then title.</p>\n",

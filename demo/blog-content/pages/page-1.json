@@ -6,7 +6,7 @@
             "postSlug": "2025-08-27-deploying",
             "postTitle": "Deploying",
             "tags": [
-                "Build"
+                "build"
             ],
             "postDate": "2025-08-27T00:00:00.000Z",
             "postBlurb": "<p>Deploying is copying the built folder to a static host.</p>\n",
@@ -16,7 +16,7 @@
             "postSlug": "2025-07-16-slots",
             "postTitle": "Slots",
             "tags": [
-                "Ui"
+                "ui"
             ],
             "postDate": "2025-07-16T00:00:00.000Z",
             "postBlurb": "<p>The blog element exposes slots for the brand, the nav links, and the header right side.</p>\n<h2>Named slots</h2>\n<p>Slot names are declared on the element, so consumers never type raw strings.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -26,8 +26,8 @@
             "postSlug": "2025-06-09-search-and-tags",
             "postTitle": "Search and Tags",
             "tags": [
-                "Meta",
-                "Search"
+                "meta",
+                "search"
             ],
             "postDate": "2025-06-09T00:00:00.000Z",
             "postBlurb": "<p>Search runs entirely in the browser against a pre-built index, so there is no server to deploy.</p>\n",
@@ -37,8 +37,8 @@
             "postSlug": "2025-05-09-pagination",
             "postTitle": "Pagination",
             "tags": [
-                "Ui",
-                "Build"
+                "ui",
+                "build"
             ],
             "postDate": "2025-05-09T00:00:00.000Z",
             "postBlurb": "<p>The main list shows twenty posts per page and pages are pre-generated.</p>\n",
@@ -48,8 +48,8 @@
             "postSlug": "2025-04-11-fonts",
             "postTitle": "Fonts",
             "tags": [
-                "Styling",
-                "Vira"
+                "styling",
+                "vira"
             ],
             "postDate": "2025-04-11T00:00:00.000Z",
             "postBlurb": "<p>Font weights and families come from Vira CSS variables.</p>\n<h2>Overrides</h2>\n<p>A consumer can set those variables to restyle the blog without forking it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -59,8 +59,8 @@
             "postSlug": "2025-03-21-theming",
             "postTitle": "Theming",
             "tags": [
-                "Styling",
-                "Vira"
+                "styling",
+                "vira"
             ],
             "postDate": "2025-03-21T00:00:00.000Z",
             "postBlurb": "<p>Colors come from the Vira theme, so light and dark modes both work.</p>\n",
@@ -70,8 +70,8 @@
             "postSlug": "2025-02-28-keyboard-use",
             "postTitle": "Keyboard Use",
             "tags": [
-                "Search",
-                "Ui"
+                "search",
+                "ui"
             ],
             "postDate": "2025-02-28T00:00:00.000Z",
             "postBlurb": "<p>Escape closes the search dropdown without clearing what was typed.</p>\n",
@@ -81,7 +81,7 @@
             "postSlug": "2025-02-06-search-ranking",
             "postTitle": "Search Ranking",
             "tags": [
-                "Search"
+                "search"
             ],
             "postDate": "2025-02-06T00:00:00.000Z",
             "postBlurb": "<p>A title match outranks a heading match, and a heading match outranks body text.</p>\n<h2>Scores</h2>\n<p>Every query word adds to a post score, so multi-word queries narrow the list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -91,8 +91,8 @@
             "postSlug": "2025-01-14-the-search-index",
             "postTitle": "The Search Index",
             "tags": [
-                "Search",
-                "Build"
+                "search",
+                "build"
             ],
             "postDate": "2025-01-14T00:00:00.000Z",
             "postBlurb": "<p>Search runs against a JSON index built at the same time as the pages.</p>\n",
@@ -102,7 +102,7 @@
             "postSlug": "2024-12-19-static-output",
             "postTitle": "Static Output",
             "tags": [
-                "Build"
+                "build"
             ],
             "postDate": "2024-12-19T00:00:00.000Z",
             "postBlurb": "<p>The build writes plain JSON files plus one HTML entry point.</p>\n",
@@ -112,7 +112,7 @@
             "postSlug": "2024-11-30-routing",
             "postTitle": "Routing",
             "tags": [
-                "Routing"
+                "routing"
             ],
             "postDate": "2024-11-30T00:00:00.000Z",
             "postBlurb": "<p>Routes are declared once in a path tree, and unknown paths fall back to the main list.</p>\n<h2>Path tree</h2>\n<p>The tree is the single source of truth for which URLs exist.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -122,8 +122,8 @@
             "postSlug": "2024-11-08-the-history-page",
             "postTitle": "The History Page",
             "tags": [
-                "Meta",
-                "Routing"
+                "meta",
+                "routing"
             ],
             "postDate": "2024-11-08T00:00:00.000Z",
             "postBlurb": "<p>The history page lists every post as one line: date then title.</p>\n",
@@ -133,8 +133,8 @@
             "postSlug": "2024-10-18-tags",
             "postTitle": "Tags",
             "tags": [
-                "Meta",
-                "Tags"
+                "meta",
+                "tags"
             ],
             "postDate": "2024-10-18T00:00:00.000Z",
             "postBlurb": "<p>A post can carry any number of tags, and each one gets its own page.</p>\n",
@@ -144,7 +144,7 @@
             "postSlug": "2024-09-27-dates",
             "postTitle": "Dates",
             "tags": [
-                "Meta"
+                "meta"
             ],
             "postDate": "2024-09-27T00:00:00.000Z",
             "postBlurb": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -154,7 +154,7 @@
             "postSlug": "2024-09-05-the-truncate-marker",
             "postTitle": "The Truncate Marker",
             "tags": [
-                "Meta"
+                "meta"
             ],
             "postDate": "2024-09-05T00:00:00.000Z",
             "postBlurb": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n",
@@ -164,8 +164,8 @@
             "postSlug": "2024-08-16-links",
             "postTitle": "Links",
             "tags": [
-                "Markdown",
-                "Routing"
+                "markdown",
+                "routing"
             ],
             "postDate": "2024-08-16T00:00:00.000Z",
             "postBlurb": "<p>Links to other posts stay in-page instead of triggering a full page load.</p>\n",
@@ -175,7 +175,7 @@
             "postSlug": "2024-07-29-lists",
             "postTitle": "Lists",
             "tags": [
-                "Markdown"
+                "markdown"
             ],
             "postDate": "2024-07-29T00:00:00.000Z",
             "postBlurb": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n",
@@ -185,7 +185,7 @@
             "postSlug": "2024-07-03-images",
             "postTitle": "Images",
             "tags": [
-                "Markdown"
+                "markdown"
             ],
             "postDate": "2024-07-03T00:00:00.000Z",
             "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
@@ -195,8 +195,8 @@
             "postSlug": "2024-06-14-headings-and-anchors",
             "postTitle": "Headings and Anchors",
             "tags": [
-                "Markdown",
-                "Search"
+                "markdown",
+                "search"
             ],
             "postDate": "2024-06-14T00:00:00.000Z",
             "postBlurb": "<p>Every heading gets a URL anchor, which is also what search results link to.</p>\n",
@@ -206,8 +206,8 @@
             "postSlug": "2024-05-21-block-quotes",
             "postTitle": "Block Quotes",
             "tags": [
-                "Markdown",
-                "Styling"
+                "markdown",
+                "styling"
             ],
             "postDate": "2024-05-21T00:00:00.000Z",
             "postBlurb": "<p>Quotes render with a vertical bar on the left instead of a background fill.</p>\n",

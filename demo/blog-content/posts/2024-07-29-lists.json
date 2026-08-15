@@ -2,7 +2,7 @@
     "postSlug": "2024-07-29-lists",
     "postTitle": "Lists",
     "tags": [
-        "Markdown"
+        "markdown"
     ],
     "postDate": "2024-07-29T00:00:00.000Z",
     "postBlurb": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n",
