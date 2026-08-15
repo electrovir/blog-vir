@@ -1151,6 +1151,10 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
                 position: static;
             }
 
+            ${e[`vir-blog-header-wrapped`].selector} .right {
+                border-bottom-right-radius: 8px;
+            }
+
             .left,
             .right {
                 ${Ek(Z.colors[nA])}
@@ -1163,6 +1167,8 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
 
             .left {
                 gap: 16px;
+                padding-right: 16px;
+                border-bottom-right-radius: 8px;
 
                 & .brand {
                     display: flex;
@@ -1181,6 +1187,8 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
 
             .right {
                 gap: 12px;
+                padding-left: 16px;
+                border-bottom-left-radius: 8px;
             }
         `,init({host:e,state:t,updateState:n}){let r=new ResizeObserver(()=>{let r=e.shadowRoot.querySelector(`.left`),i=e.shadowRoot.querySelector(`.right`);if(!(r instanceof HTMLElement)||!(i instanceof HTMLElement))return;let a=r.offsetTop!==i.offsetTop;a!==t.isWrapped&&n({isWrapped:a})});r.observe(e),qN.set(e,r)},cleanup({host:e}){qN.get(e)?.disconnect(),qN.delete(e)},render({inputs:e,slotNames:t,testIds:n}){return q`
             <div class="left" ${mk(n[`vir-blog-header-left`])}>
