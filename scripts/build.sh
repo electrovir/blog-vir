@@ -9,5 +9,7 @@ npm run build --workspace @blog-vir/demo
 mkdir -p dist-pages/docs dist-pages/demo
 cp -R packages/blog-vir/dist-docs/. dist-pages/docs
 cp -R packages/demo/dist/. dist-pages/demo
+cp dist-pages/demo/index.html dist-pages/demo/404.html
+cp dist-pages/demo/index.html dist-pages/404.html
 cp packages/blog-vir/dist-docs/.nojekyll dist-pages/.nojekyll
 cp index.html dist-pages/index.html
