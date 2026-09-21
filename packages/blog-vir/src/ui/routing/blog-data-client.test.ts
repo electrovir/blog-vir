@@ -12,7 +12,7 @@ async function runWithMockFetch({
     const originalFetch = Object.getOwnPropertyDescriptor(globalThis, 'fetch');
     Object.defineProperty(globalThis, 'fetch', {
         configurable: true,
-        value: () => {
+        value() {
             return Promise.resolve(new Response(responseBody));
         },
     });

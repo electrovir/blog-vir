@@ -201,8 +201,13 @@ function renderPagerEntry({
     const button = html`
         <${ViraButton.assign({
             text,
-            icon,
-            showIconOnRight,
+            ...(showIconOnRight
+                ? {
+                      rightSideIcon: icon,
+                  }
+                : {
+                      icon,
+                  }),
             buttonEmphasis: ViraEmphasis.Subtle,
         })}
             ${listen('click', () => {

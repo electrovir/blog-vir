@@ -83,7 +83,11 @@ export const VirBlog = defineElement<
             updateState({
                 frontendState: state.frontendState,
             });
-            dispatch(new events.frontendStateUpdate(frontendState));
+            dispatch(
+                new events.frontendStateUpdate({
+                    detail: frontendState,
+                }),
+            );
         });
     },
     cleanup({state}) {
@@ -194,14 +198,14 @@ const renderPostListRoute: BlogRouteRenderer = ({frontendState}) => {
 const routeRenderers: Readonly<Record<string, BlogRouteRenderer | undefined>> = {
     '': renderPostListRoute,
     [blogPathTree.paths.children.page.path]: renderPostListRoute,
-    [blogPathTree.paths.children.history.path]: ({frontendState}) => {
+    [blogPathTree.paths.children.history.path]({frontendState}) {
         return html`
             <${VirBlogHistory.assign({
                 frontendState,
             })}></${VirBlogHistory}>
         `;
     },
-    [blogPathTree.paths.children.post.path]: (params) => {
+    [blogPathTree.paths.children.post.path](params) {
         const slug = params.frontendState.currentRoute.paths[1];
         if (!slug) {
             return renderPostListRoute(params);
@@ -213,7 +217,7 @@ const routeRenderers: Readonly<Record<string, BlogRouteRenderer | undefined>> = 
             })}></${VirBlogPost}>
         `;
     },
-    [blogPathTree.paths.children.tags.path]: ({frontendState}) => {
+    [blogPathTree.paths.children.tags.path]({frontendState}) {
         const tag = frontendState.currentRoute.paths[1];
         if (!tag) {
             return html`

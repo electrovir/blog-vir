@@ -1,5 +1,6 @@
 import {assert} from '@augment-vir/assert';
 import {describe, it} from '@augment-vir/test';
+import {parseUrl} from 'url-vir';
 import {blogPathTree} from './blog-route.js';
 import {createBlogRouter, normalizeBlogRoute} from './blog-router.js';
 
@@ -27,7 +28,7 @@ describe(createBlogRouter.name, () => {
         });
 
         try {
-            const url = new URL(
+            const url = parseUrl(
                 router.createRouteUrl(
                     normalizeBlogRoute({
                         paths: blogPathTree.paths.fullPaths,

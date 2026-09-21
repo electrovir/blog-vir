@@ -1,6 +1,6 @@
 {
     "name": "@blog-vir/demo",
-    "version": "0.0.8",
+    "version": "0.1.0",
     "private": true,
     "homepage": "https://github.com/electrovir/blog-vir",
     "bugs": {
@@ -25,22 +25,22 @@
         "test": "exit 0;"
     },
     "dependencies": {
-        "@augment-vir/assert": "^32.2.2",
-        "@electrovir/color": "^1.7.11",
-        "blog-vir": "^0.0.8",
-        "element-vir": "*",
-        "theme-vir": "^28.25.1",
-        "url-vir": "^2.2.1",
-        "vira": "^31.30.0"
+        "@augment-vir/assert": "^32.3.1",
+        "@electrovir/color": "^2.0.0",
+        "blog-vir": "^0.1.0",
+        "element-vir": "^27.0.1",
+        "theme-vir": "^29.0.0",
+        "url-vir": "^2.2.2",
+        "vira": "^32.2.0"
     },
     "devDependencies": {
-        "@augment-vir/test": "^32.2.2",
+        "@augment-vir/test": "^32.3.1",
         "@web/dev-server-esbuild": "^2.0.0",
         "@web/test-runner": "^1.0.0",
         "@web/test-runner-playwright": "^1.0.0",
         "istanbul-smart-text-reporter": "^1.1.5",
         "typescript": "^6.0.3",
-        "vite": "^8.2.1"
+        "vite": "^8.3.0"
     },
     "engines": {
         "node": ">=22"

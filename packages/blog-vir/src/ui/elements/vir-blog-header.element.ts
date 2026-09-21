@@ -24,7 +24,9 @@ export const VirBlogHeader = defineElement<{
         };
     },
     hostClasses: {
-        'vir-blog-header-wrapped': ({state}) => state.isWrapped,
+        'vir-blog-header-wrapped'({state}) {
+            return state.isWrapped;
+        },
     },
     slotNames: [
         'vir-blog-header-brand',
@@ -35,7 +37,7 @@ export const VirBlogHeader = defineElement<{
         'vir-blog-header-left',
         'vir-blog-header-right',
     ],
-    styles: ({hostClasses}) => {
+    styles({hostClasses}) {
         return css`
             /*
            The header itself is transparent so page content scrolls visibly through the gap between
