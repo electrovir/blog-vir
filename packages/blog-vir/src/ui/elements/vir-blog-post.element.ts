@@ -1,13 +1,25 @@
+import {check} from '@augment-vir/assert';
 import {createUtcFullDate, utcTimezone} from 'date-vir';
-import {asyncProp, css, defineElement, html, renderAsync, unsafeHTML} from 'element-vir';
+import {
+    asyncProp,
+    css,
+    defineElement,
+    html,
+    listen,
+    onDomRendered,
+    renderAsync,
+    unsafeHTML,
+} from 'element-vir';
 import {ViraAbsoluteTime, ViraError, viraTheme} from 'vira';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
+import {normalizeBlogRoute} from '../routing/blog-router.js';
 import {
     blogContentMaxWidth,
     blogFontSizes,
     createBlogContentStyles,
 } from '../util/shared-styles.js';
+import {VirBlogTableOfContents} from './vir-blog-table-of-contents.element.js';
 import {VirBlogTagLink} from './vir-blog-tag-link.element.js';
 
 /**
@@ -25,6 +37,7 @@ export const VirBlogPost = defineElement<{
             display: block;
             max-width: ${blogContentMaxWidth};
             margin: 0 auto;
+            position: relative;
         }
 
         article {
@@ -76,9 +89,10 @@ export const VirBlogPost = defineElement<{
                     return await dataClient.fetchPost(slug);
                 },
             }),
+            lastScrolledHeading: '',
         };
     },
-    render({inputs, state}) {
+    render({inputs, state, updateState}) {
         state.postProp.update({
             slug: inputs.slug,
             dataClient: inputs.frontendState.dataClient,
@@ -91,6 +105,14 @@ export const VirBlogPost = defineElement<{
             `,
             (post) => {
                 return html`
+                    ${post.postHeadings.length
+                        ? html`
+                              <${VirBlogTableOfContents.assign({
+                                  frontendState: inputs.frontendState,
+                                  post,
+                              })}></${VirBlogTableOfContents}>
+                          `
+                        : ''}
                     <article>
                         <header class="header">
                             <h1 class="title">${post.postTitle}</h1>
@@ -118,7 +140,60 @@ export const VirBlogPost = defineElement<{
                                   `
                                 : ''}
                         </header>
-                        <div class="content">${unsafeHTML(post.postContentHtml)}</div>
+                        <div
+                            class="content"
+                            ${listen('click', (event) => {
+                                const anchorLink = event.composedPath().find((eventPathItem) => {
+                                    return check.instanceOf(eventPathItem, HTMLAnchorElement);
+                                });
+                                if (!anchorLink?.classList.contains('anchor') || !anchorLink.hash) {
+                                    return;
+                                }
+                                inputs.frontendState.router.setRouteOnDirectNavigation(
+                                    normalizeBlogRoute({
+                                        hash: anchorLink.hash.slice(1),
+                                    }),
+                                    event,
+                                );
+                            })}
+                            ${onDomRendered((contentElement) => {
+                                const headingUrlAnchor = inputs.frontendState.currentRoute.hash;
+                                if (!headingUrlAnchor) {
+                                    if (state.lastScrolledHeading) {
+                                        updateState({
+                                            lastScrolledHeading: '',
+                                        });
+                                    }
+                                    return;
+                                }
+                                const currentPostHeading = [
+                                    inputs.slug,
+                                    headingUrlAnchor,
+                                ].join('#');
+                                if (currentPostHeading === state.lastScrolledHeading) {
+                                    return;
+                                }
+                                const headingElement = [
+                                    ...contentElement.querySelectorAll<HTMLElement>(
+                                        ':is(h1, h2, h3, h4, h5, h6)',
+                                    ),
+                                ].find((candidateHeading) => {
+                                    return candidateHeading.id === headingUrlAnchor;
+                                });
+                                if (!headingElement) {
+                                    return;
+                                }
+                                headingElement.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start',
+                                });
+                                updateState({
+                                    lastScrolledHeading: currentPostHeading,
+                                });
+                            })}
+                        >
+                            ${unsafeHTML(post.postContentHtml)}
+                        </div>
                     </article>
                 `;
             },

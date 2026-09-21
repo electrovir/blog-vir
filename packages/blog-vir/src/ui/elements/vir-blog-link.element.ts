@@ -1,7 +1,7 @@
 import {classMap, css, defineElement, html, listen} from 'element-vir';
 import {ViraLink} from 'vira';
 import {type BlogRoute} from '../routing/blog-route.js';
-import {type BlogRouter} from '../routing/blog-router.js';
+import {normalizeBlogRoute, type BlogRouter} from '../routing/blog-router.js';
 
 /**
  * A ViraLink bound to a blog {@link BlogRoute}. Plain clicks are handled in-page by the blog router
@@ -34,7 +34,7 @@ export const VirBlogLink = defineElement<{
         return html`
             <${ViraLink.assign({
                 link: {
-                    url: inputs.router.createRouteUrl(inputs.route).url,
+                    url: inputs.router.createRouteUrl(normalizeBlogRoute(inputs.route)).url,
                     newTab: false,
                 },
             })}
@@ -42,7 +42,10 @@ export const VirBlogLink = defineElement<{
                     'underline-on-hover': inputs.underlineOnHover,
                 })}
                 ${listen('click', (event) => {
-                    inputs.router.setRouteOnDirectNavigation(inputs.route, event);
+                    inputs.router.setRouteOnDirectNavigation(
+                        normalizeBlogRoute(inputs.route),
+                        event,
+                    );
                 })}
             >
                 <slot></slot>

@@ -60,6 +60,39 @@ function extractHeadings(rawContent: string): BlogPostHeading[] {
     }, []);
 }
 
+function renderPostContentHtml({
+    rawContent,
+    headings,
+}: Readonly<{
+    rawContent: string;
+    headings: ReadonlyArray<BlogPostHeading>;
+}>): RawHtml {
+    let headingIndex = 0;
+    const renderer = new marked.Renderer();
+    renderer.heading = function heading({depth, tokens}) {
+        const heading = headings[headingIndex];
+        headingIndex += 1;
+        const headingUrlAnchor =
+            heading?.headingUrlAnchor ||
+            [
+                'heading-',
+                String(depth),
+            ].join('');
+        return [
+            `<h${depth} id="${headingUrlAnchor}">`,
+            `<a class="anchor" href="#${headingUrlAnchor}" aria-label="Link to this section.">#</a>`,
+            this.parser.parseInline(tokens),
+            `</h${depth}>\n`,
+        ].join('');
+    };
+    return applyBrand<RawHtml>(
+        marked(rawContent, {
+            async: false,
+            renderer,
+        }),
+    );
+}
+
 function stripHtml(input: string): string {
     return (
         input
@@ -370,11 +403,10 @@ export async function parseBlogPostFile(filePath: string): Promise<ParsedBlogPos
     }
 
     const headings = extractHeadings(rawContent);
-    const contentHtml = applyBrand<RawHtml>(
-        marked(rawContent, {
-            async: false,
-        }),
-    );
+    const contentHtml = renderPostContentHtml({
+        rawContent,
+        headings,
+    });
 
     const tags = normalizeBlogPostTags(frontmatter.tags || []);
 

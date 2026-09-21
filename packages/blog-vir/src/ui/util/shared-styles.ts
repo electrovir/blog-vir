@@ -88,8 +88,12 @@ export function createBlogContentStyles(
             color: ${viraTheme.colors['vira-grey-foreground-body'].foreground.value};
         }
 
-        & :is(h1, h2, h3, h4, h5, h6):hover a.anchor {
+        & :is(h1, h2, h3, h4, h5, h6):is(:hover, :focus-within) a.anchor {
             opacity: 1;
+        }
+
+        & a:not(.anchor) {
+            color: ${viraTheme.colors['vira-blue-foreground-non-body'].foreground.value};
         }
 
         & pre {

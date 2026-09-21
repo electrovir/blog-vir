@@ -19,6 +19,7 @@ export * from './ui/elements/vir-blog-post-blurb.element.js';
 export * from './ui/elements/vir-blog-post-list.element.js';
 export * from './ui/elements/vir-blog-post.element.js';
 export * from './ui/elements/vir-blog-search.element.js';
+export * from './ui/elements/vir-blog-table-of-contents.element.js';
 export * from './ui/elements/vir-blog-tag-link.element.js';
 export * from './ui/elements/vir-blog-tag-list.element.js';
 export * from './ui/elements/vir-blog-tag-page.element.js';

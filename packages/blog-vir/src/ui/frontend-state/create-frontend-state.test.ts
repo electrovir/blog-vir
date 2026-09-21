@@ -37,4 +37,20 @@ describe(createFrontendState.name, () => {
 
         frontendStateObservable.destroy();
     });
+
+    it('excludes the current hash from the default data client base', () => {
+        const originalUrl = globalThis.location.href;
+        globalThis.history.replaceState(undefined, '', '/#table');
+        const frontendStateObservable = createFrontendState();
+
+        try {
+            assert.strictEquals(
+                frontendStateObservable.value.dataClient.siteBase,
+                `${window.location.origin}/`,
+            );
+        } finally {
+            frontendStateObservable.destroy();
+            globalThis.history.replaceState(undefined, '', originalUrl);
+        }
+    });
 });

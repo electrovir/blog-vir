@@ -74,6 +74,48 @@ describe('blog post date resolution', () => {
         );
     });
 
+    it('adds IDs and links to Markdown headings', async () => {
+        await useTempPostFile(
+            {
+                fileName: '2024-01-01-headings.md',
+                content: [
+                    '---',
+                    'title: Headings',
+                    '---',
+                    '',
+                    '## First heading',
+                    '',
+                    '## First heading',
+                ].join('\n'),
+            },
+            async (tempFilePath) => {
+                const post = (await parseBlogPostFile(tempFilePath)).post;
+                assert.deepEquals(post.postHeadings, [
+                    {
+                        headingLevel: 2,
+                        headingTitle: 'First heading',
+                        headingUrlAnchor: 'first-heading',
+                    },
+                    {
+                        headingLevel: 2,
+                        headingTitle: 'First heading',
+                        headingUrlAnchor: 'first-heading-1',
+                    },
+                ]);
+                assert.strictEquals(
+                    post.postContentHtml,
+                    applyBrand<RawHtml>(
+                        [
+                            '<h2 id="first-heading"><a class="anchor" href="#first-heading" aria-label="Link to this section.">#</a>First heading</h2>',
+                            '<h2 id="first-heading-1"><a class="anchor" href="#first-heading-1" aria-label="Link to this section.">#</a>First heading</h2>',
+                            '',
+                        ].join('\n'),
+                    ),
+                );
+            },
+        );
+    });
+
     it('normalizes and deduplicates tags', async () => {
         await useTempPostFile(
             {

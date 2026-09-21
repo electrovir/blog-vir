@@ -4,7 +4,7 @@ import {Observable} from 'element-vir';
 import {readInjectedBlogVirData} from '../../data/injected-global-data.js';
 import {BlogDataClient} from '../routing/blog-data-client.js';
 import {blogPathTree} from '../routing/blog-route.js';
-import {createBlogRouter} from '../routing/blog-router.js';
+import {createBlogRouter, normalizeBlogRoute} from '../routing/blog-router.js';
 import {type FrontendStateObservable} from './frontend-state.js';
 
 /**
@@ -38,9 +38,11 @@ export function createFrontendState({
             dataClient:
                 dataClient ||
                 new BlogDataClient(
-                    router.createRouteUrl({
-                        paths: blogPathTree.paths.fullPaths,
-                    }).url,
+                    router.createRouteUrl(
+                        normalizeBlogRoute({
+                            paths: blogPathTree.paths.fullPaths,
+                        }),
+                    ).url,
                     injectedData.pageSize,
                 ),
             currentRoute: router.readCurrentRoute(),

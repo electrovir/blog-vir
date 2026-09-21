@@ -1,7 +1,7 @@
 import {removePrefix, type PartialWithUndefined} from '@augment-vir/common';
 import {SpaRouter} from 'spa-router-vir';
 import {joinUrlPaths} from 'url-vir';
-import {sanitizeBlogRoute, type BlogPaths} from './blog-route.js';
+import {sanitizeBlogRoute, type BlogPaths, type BlogRoute} from './blog-route.js';
 
 /**
  * Router configured with the blog's valid paths and hash values.
@@ -9,6 +9,22 @@ import {sanitizeBlogRoute, type BlogPaths} from './blog-route.js';
  * @category Internal
  */
 export type BlogRouter = SpaRouter<BlogPaths, undefined, string | undefined>;
+
+/**
+ * Makes omitted route fields explicit. SpaRouter inherits omitted fields from the current URL, but
+ * blog links should clear a hash or search parameters unless they deliberately provide them.
+ *
+ * @category Internal
+ */
+export function normalizeBlogRoute<const CurrentRoute extends Partial<BlogRoute>>(
+    route: CurrentRoute,
+) {
+    return {
+        ...route,
+        search: route.search,
+        hash: route.hash,
+    };
+}
 
 /**
  * Create the blog's router. Frontend state creation uses this for the page's router; consumers only

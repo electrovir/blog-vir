@@ -8,6 +8,7 @@ import {createFrontendState} from '../frontend-state/create-frontend-state.js';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
 import {blogPathTree} from '../routing/blog-route.js';
+import {normalizeBlogRoute} from '../routing/blog-router.js';
 import {VirBlogHeader} from './vir-blog-header.element.js';
 import {VirBlogHistory} from './vir-blog-history.element.js';
 import {VirBlogLink} from './vir-blog-link.element.js';
@@ -160,9 +161,11 @@ export function renderDefaultNav(frontendState: Readonly<FrontendState>) {
         <${ViraLink.assign({
             link: {
                 url: createBlogRssFeedUrl(
-                    frontendState.router.createRouteUrl({
-                        paths: blogPathTree.paths.fullPaths,
-                    }).url,
+                    frontendState.router.createRouteUrl(
+                        normalizeBlogRoute({
+                            paths: blogPathTree.paths.fullPaths,
+                        }),
+                    ).url,
                 ),
                 newTab: false,
             },

@@ -17,7 +17,7 @@ import {type BlogPostSectionSearchEntry} from '../../data/blog-post.js';
 import {type FrontendState} from '../frontend-state/frontend-state.js';
 import {type BlogDataClient} from '../routing/blog-data-client.js';
 import {blogPathTree} from '../routing/blog-route.js';
-import {type BlogRouter} from '../routing/blog-router.js';
+import {normalizeBlogRoute, type BlogRouter} from '../routing/blog-router.js';
 import {blogFontSizes} from '../util/shared-styles.js';
 
 const maxResults = 30;
@@ -273,24 +273,17 @@ function renderResult({
     return html`
         <${ViraLink.assign({
             link: {
-                url: router.createRouteUrl(route).url,
+                url: router.createRouteUrl(normalizeBlogRoute(route)).url,
                 newTab: false,
             },
             disableLinkStyles: true,
         })}
             class="result"
             ${listen('click', (event) => {
-                if (!router.setRouteOnDirectNavigation(route, event)) {
+                if (!router.setRouteOnDirectNavigation(normalizeBlogRoute(route), event)) {
                     return;
                 }
                 closeDropdown();
-                if (heading) {
-                    window.requestAnimationFrame(() => {
-                        document.getElementById(heading.headingUrlAnchor)?.scrollIntoView({
-                            behavior: 'smooth',
-                        });
-                    });
-                }
             })}
         >
             ${heading
