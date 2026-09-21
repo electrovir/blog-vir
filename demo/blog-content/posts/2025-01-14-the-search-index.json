@@ -8,7 +8,7 @@
     "postDate": "2025-01-14T00:00:00.000Z",
     "postBlurb": "<p>Search runs against a JSON index built at the same time as the pages.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>Search runs against a JSON index built at the same time as the pages.</p>\n<!--truncate--><h2>Per section</h2>\n<p>Each heading becomes its own index entry, with the section text alongside it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Search runs against a JSON index built at the same time as the pages.</p>\n<!--truncate--><h2 id=\"per-section\"><a class=\"anchor\" href=\"#per-section\" aria-label=\"Link to this section.\">#</a>Per section</h2>\n<p>Each heading becomes its own index entry, with the section text alongside it.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

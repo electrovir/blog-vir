@@ -29,9 +29,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-07-16-slots</guid>
             <pubDate>Wed, 16 Jul 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;The blog element exposes slots for the brand, the nav links, and the header right side.&lt;/p&gt;
-&lt;h2&gt;Named slots&lt;/h2&gt;
+&lt;h2 id=&quot;named-slots&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#named-slots&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Named slots&lt;/h2&gt;
 &lt;p&gt;Slot names are declared on the element, so consumers never type raw strings.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>ui</category>
         </item>
@@ -59,9 +59,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-04-11-fonts</guid>
             <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Font weights and families come from Vira CSS variables.&lt;/p&gt;
-&lt;h2&gt;Overrides&lt;/h2&gt;
+&lt;h2 id=&quot;overrides&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#overrides&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Overrides&lt;/h2&gt;
 &lt;p&gt;A consumer can set those variables to restyle the blog without forking it.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>styling</category>
             <category>vira</category>
@@ -90,9 +90,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2025-02-06-search-ranking</guid>
             <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;A title match outranks a heading match, and a heading match outranks body text.&lt;/p&gt;
-&lt;h2&gt;Scores&lt;/h2&gt;
+&lt;h2 id=&quot;scores&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#scores&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Scores&lt;/h2&gt;
 &lt;p&gt;Every query word adds to a post score, so multi-word queries narrow the list.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>search</category>
         </item>
@@ -119,9 +119,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-11-30-routing</guid>
             <pubDate>Sat, 30 Nov 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Routes are declared once in a path tree, and unknown paths fall back to the main list.&lt;/p&gt;
-&lt;h2&gt;Path tree&lt;/h2&gt;
+&lt;h2 id=&quot;path-tree&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#path-tree&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Path tree&lt;/h2&gt;
 &lt;p&gt;The tree is the single source of truth for which URLs exist.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>routing</category>
         </item>
@@ -149,9 +149,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-09-27-dates</guid>
             <pubDate>Fri, 27 Sep 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Post dates come from the front matter, not from the file system.&lt;/p&gt;
-&lt;h2&gt;Ordering&lt;/h2&gt;
+&lt;h2 id=&quot;ordering&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#ordering&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Ordering&lt;/h2&gt;
 &lt;p&gt;The main list is sorted newest first, and so is the history page.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>meta</category>
         </item>
@@ -186,9 +186,9 @@
             <guid isPermaLink="true">https://electrovir.github.io/blog-vir/demo/post/2024-07-03-images</guid>
             <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
             <description>&lt;p&gt;Images live beside the markdown file and are copied into the built site.&lt;/p&gt;
-&lt;h2&gt;Sizing&lt;/h2&gt;
+&lt;h2 id=&quot;sizing&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#sizing&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Sizing&lt;/h2&gt;
 &lt;p&gt;Images scale down to the post width and never overflow it.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
+&lt;h2 id=&quot;notes&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#notes&quot; aria-label=&quot;Link to this section.&quot;&gt;#&lt;/a&gt;Notes&lt;/h2&gt;
 &lt;p&gt;This post exists so the demo has enough content to paginate the main list.&lt;/p&gt;</description>
             <category>markdown</category>
         </item>

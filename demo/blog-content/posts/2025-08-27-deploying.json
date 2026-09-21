@@ -7,7 +7,7 @@
     "postDate": "2025-08-27T00:00:00.000Z",
     "postBlurb": "<p>Deploying is copying the built folder to a static host.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>Deploying is copying the built folder to a static host.</p>\n<!--truncate--><h2>Base path</h2>\n<p>The site base must match the build config or data fetches will miss.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Deploying is copying the built folder to a static host.</p>\n<!--truncate--><h2 id=\"base-path\"><a class=\"anchor\" href=\"#base-path\" aria-label=\"Link to this section.\">#</a>Base path</h2>\n<p>The site base must match the build config or data fetches will miss.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

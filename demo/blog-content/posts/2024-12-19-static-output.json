@@ -7,7 +7,7 @@
     "postDate": "2024-12-19T00:00:00.000Z",
     "postBlurb": "<p>The build writes plain JSON files plus one HTML entry point.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>The build writes plain JSON files plus one HTML entry point.</p>\n<!--truncate--><h2>No server</h2>\n<p>Any static host can serve the output, including GitHub Pages.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>The build writes plain JSON files plus one HTML entry point.</p>\n<!--truncate--><h2 id=\"no-server\"><a class=\"anchor\" href=\"#no-server\" aria-label=\"Link to this section.\">#</a>No server</h2>\n<p>Any static host can serve the output, including GitHub Pages.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

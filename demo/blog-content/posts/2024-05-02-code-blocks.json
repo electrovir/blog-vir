@@ -8,7 +8,7 @@
     "postDate": "2024-05-02T00:00:00.000Z",
     "postBlurb": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n<!--truncate--><h2>Fences</h2>\n<p>Triple backticks open and close a block. Inline code uses single backticks.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Fenced code blocks get a grey background and keep their whitespace.</p>\n<!--truncate--><h2 id=\"fences\"><a class=\"anchor\" href=\"#fences\" aria-label=\"Link to this section.\">#</a>Fences</h2>\n<p>Triple backticks open and close a block. Inline code uses single backticks.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

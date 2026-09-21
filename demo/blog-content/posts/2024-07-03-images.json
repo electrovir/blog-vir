@@ -5,9 +5,9 @@
         "markdown"
     ],
     "postDate": "2024-07-03T00:00:00.000Z",
-    "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2 id=\"sizing\"><a class=\"anchor\" href=\"#sizing\" aria-label=\"Link to this section.\">#</a>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "isTruncated": false,
-    "postContentHtml": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2 id=\"sizing\"><a class=\"anchor\" href=\"#sizing\" aria-label=\"Link to this section.\">#</a>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

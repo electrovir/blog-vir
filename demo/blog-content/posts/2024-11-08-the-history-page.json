@@ -8,7 +8,7 @@
     "postDate": "2024-11-08T00:00:00.000Z",
     "postBlurb": "<p>The history page lists every post as one line: date then title.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>The history page lists every post as one line: date then title.</p>\n<!--truncate--><h2>Whole line links</h2>\n<p>The entire line is the link, so the click target is wide.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>The history page lists every post as one line: date then title.</p>\n<!--truncate--><h2 id=\"whole-line-links\"><a class=\"anchor\" href=\"#whole-line-links\" aria-label=\"Link to this section.\">#</a>Whole line links</h2>\n<p>The entire line is the link, so the click target is wide.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

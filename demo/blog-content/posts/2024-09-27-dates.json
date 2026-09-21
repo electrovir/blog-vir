@@ -5,9 +5,9 @@
         "meta"
     ],
     "postDate": "2024-09-27T00:00:00.000Z",
-    "postBlurb": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postBlurb": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2 id=\"ordering\"><a class=\"anchor\" href=\"#ordering\" aria-label=\"Link to this section.\">#</a>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "isTruncated": false,
-    "postContentHtml": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2 id=\"ordering\"><a class=\"anchor\" href=\"#ordering\" aria-label=\"Link to this section.\">#</a>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

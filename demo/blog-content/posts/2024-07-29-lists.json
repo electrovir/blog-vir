@@ -7,7 +7,7 @@
     "postDate": "2024-07-29T00:00:00.000Z",
     "postBlurb": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n<!--truncate--><h2>Mixing</h2>\n<p>A list item can contain paragraphs, code blocks, and nested lists.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>Ordered and unordered lists both render with the browser default markers.</p>\n<!--truncate--><h2 id=\"mixing\"><a class=\"anchor\" href=\"#mixing\" aria-label=\"Link to this section.\">#</a>Mixing</h2>\n<p>A list item can contain paragraphs, code blocks, and nested lists.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,

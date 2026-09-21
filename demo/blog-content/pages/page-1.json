@@ -30,7 +30,7 @@
                 "ui"
             ],
             "postDate": "2025-07-16T00:00:00.000Z",
-            "postBlurb": "<p>The blog element exposes slots for the brand, the nav links, and the header right side.</p>\n<h2>Named slots</h2>\n<p>Slot names are declared on the element, so consumers never type raw strings.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>The blog element exposes slots for the brand, the nav links, and the header right side.</p>\n<h2 id=\"named-slots\"><a class=\"anchor\" href=\"#named-slots\" aria-label=\"Link to this section.\">#</a>Named slots</h2>\n<p>Slot names are declared on the element, so consumers never type raw strings.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {
@@ -63,7 +63,7 @@
                 "vira"
             ],
             "postDate": "2025-04-11T00:00:00.000Z",
-            "postBlurb": "<p>Font weights and families come from Vira CSS variables.</p>\n<h2>Overrides</h2>\n<p>A consumer can set those variables to restyle the blog without forking it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>Font weights and families come from Vira CSS variables.</p>\n<h2 id=\"overrides\"><a class=\"anchor\" href=\"#overrides\" aria-label=\"Link to this section.\">#</a>Overrides</h2>\n<p>A consumer can set those variables to restyle the blog without forking it.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {
@@ -95,7 +95,7 @@
                 "search"
             ],
             "postDate": "2025-02-06T00:00:00.000Z",
-            "postBlurb": "<p>A title match outranks a heading match, and a heading match outranks body text.</p>\n<h2>Scores</h2>\n<p>Every query word adds to a post score, so multi-word queries narrow the list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>A title match outranks a heading match, and a heading match outranks body text.</p>\n<h2 id=\"scores\"><a class=\"anchor\" href=\"#scores\" aria-label=\"Link to this section.\">#</a>Scores</h2>\n<p>Every query word adds to a post score, so multi-word queries narrow the list.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {
@@ -126,7 +126,7 @@
                 "routing"
             ],
             "postDate": "2024-11-30T00:00:00.000Z",
-            "postBlurb": "<p>Routes are declared once in a path tree, and unknown paths fall back to the main list.</p>\n<h2>Path tree</h2>\n<p>The tree is the single source of truth for which URLs exist.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>Routes are declared once in a path tree, and unknown paths fall back to the main list.</p>\n<h2 id=\"path-tree\"><a class=\"anchor\" href=\"#path-tree\" aria-label=\"Link to this section.\">#</a>Path tree</h2>\n<p>The tree is the single source of truth for which URLs exist.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {
@@ -158,7 +158,7 @@
                 "meta"
             ],
             "postDate": "2024-09-27T00:00:00.000Z",
-            "postBlurb": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>Post dates come from the front matter, not from the file system.</p>\n<h2 id=\"ordering\"><a class=\"anchor\" href=\"#ordering\" aria-label=\"Link to this section.\">#</a>Ordering</h2>\n<p>The main list is sorted newest first, and so is the history page.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {
@@ -199,7 +199,7 @@
                 "markdown"
             ],
             "postDate": "2024-07-03T00:00:00.000Z",
-            "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+            "postBlurb": "<p>Images live beside the markdown file and are copied into the built site.</p>\n<h2 id=\"sizing\"><a class=\"anchor\" href=\"#sizing\" aria-label=\"Link to this section.\">#</a>Sizing</h2>\n<p>Images scale down to the post width and never overflow it.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
             "isTruncated": false
         },
         {

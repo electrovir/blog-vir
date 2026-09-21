@@ -7,7 +7,7 @@
     "postDate": "2024-09-05T00:00:00.000Z",
     "postBlurb": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n",
     "isTruncated": true,
-    "postContentHtml": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n<!--truncate--><h2>Read more</h2>\n<p>Posts with a marker show a Read more link on the main list.</p>\n<h2>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
+    "postContentHtml": "<p>The truncate marker splits a post into its blurb and its full body.</p>\n<!--truncate--><h2 id=\"read-more\"><a class=\"anchor\" href=\"#read-more\" aria-label=\"Link to this section.\">#</a>Read more</h2>\n<p>Posts with a marker show a Read more link on the main list.</p>\n<h2 id=\"notes\"><a class=\"anchor\" href=\"#notes\" aria-label=\"Link to this section.\">#</a>Notes</h2>\n<p>This post exists so the demo has enough content to paginate the main list.</p>\n",
     "postHeadings": [
         {
             "headingLevel": 2,
