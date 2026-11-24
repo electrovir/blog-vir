@@ -76,11 +76,14 @@ export function createBlogContentStyles(
         & h6 {
             font-weight: ${viraFontCssVars['vira-font-weight-bold'].value};
             scroll-margin-top: 4rem;
+            position: relative;
         }
 
         ${headingSizeStyles}
 
         & a.anchor {
+            position: absolute;
+            right: 100%;
             opacity: 0;
             margin-right: 0.4em;
             text-decoration: none;
