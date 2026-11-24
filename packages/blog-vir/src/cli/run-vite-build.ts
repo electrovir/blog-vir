@@ -98,7 +98,7 @@ export function createViteInlineConfig({
             outDir: join(cwd, 'dist'),
             emptyOutDir: true,
             target: 'es2024',
-            rollupOptions: {
+            rolldownOptions: {
                 external: virmatorExternalDependencies,
             },
         },

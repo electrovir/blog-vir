@@ -1,6 +1,6 @@
 import {assert, assertWrap, waitUntil} from '@augment-vir/assert';
 import {describe, it, testWeb} from '@augment-vir/test';
-import {ViraInput, ViraLink, ViraPopUpTrigger} from 'vira';
+import {ViraInput, ViraLink, ViraPopoverTrigger} from 'vira';
 import {BlogDataClient} from '../routing/blog-data-client.js';
 import {createBlogRouter} from '../routing/blog-router.js';
 import {VirBlogSearch} from './vir-blog-search.element.js';
@@ -27,7 +27,7 @@ class TestBlogDataClient extends BlogDataClient {
 }
 
 describe(VirBlogSearch.tagName, () => {
-    it('opens and closes its results with ViraPopUpTrigger', async () => {
+    it('opens and closes its results with ViraPopoverTrigger', async () => {
         const router = createBlogRouter();
         const element = await testWeb.renderElement(VirBlogSearch, {
             frontendState: {
@@ -37,11 +37,14 @@ describe(VirBlogSearch.tagName, () => {
             },
         });
         const shadowRoot = assertWrap.isDefined(element.shadowRoot, 'element has no shadow root');
-        const popUpTrigger = shadowRoot.querySelector(ViraPopUpTrigger.tagName);
-        assert.instanceOf(popUpTrigger, ViraPopUpTrigger);
+        const popUpTrigger = shadowRoot.querySelector(ViraPopoverTrigger.tagName);
+        assert.instanceOf(popUpTrigger, ViraPopoverTrigger);
         const input = shadowRoot.querySelector(ViraInput.tagName);
         assert.instanceOf(input, ViraInput);
-        assert.strictEquals(input.slot, ViraPopUpTrigger.slotNames['vira-pop-up-trigger-trigger']);
+        assert.strictEquals(
+            input.slot,
+            ViraPopoverTrigger.slotNames['vira-popover-trigger-trigger'],
+        );
 
         await testWeb.click(input);
         await testWeb.typeText('search');
@@ -49,7 +52,7 @@ describe(VirBlogSearch.tagName, () => {
         const dropdown = await waitUntil.isDefined(() => shadowRoot.querySelector('.dropdown'));
         assert.strictEquals(
             dropdown.slot,
-            ViraPopUpTrigger.slotNames['vira-pop-up-trigger-pop-up'],
+            ViraPopoverTrigger.slotNames['vira-popover-trigger-popover'],
         );
         const result = await waitUntil.isDefined(() => dropdown.querySelector('.result'));
         assert.instanceOf(result, ViraLink);

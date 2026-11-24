@@ -33,6 +33,7 @@ export async function parseBlogVirArgs(
         },
         {
             binName: 'blog-vir',
+            packageJsonPath: undefined,
             importMeta,
         },
     );

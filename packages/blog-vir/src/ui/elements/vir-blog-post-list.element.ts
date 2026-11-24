@@ -1,8 +1,8 @@
 import {type PartialWithUndefined} from '@augment-vir/common';
 import {asyncProp, css, defineElement, html, listen, renderAsync} from 'element-vir';
 import {
-    ArrowLeft24Icon,
-    ArrowRight24Icon,
+    LucideArrowLeftIcon,
+    LucideArrowRightIcon,
     ViraButton,
     ViraEmphasis,
     ViraError,
@@ -138,7 +138,7 @@ export const VirBlogPostList = defineElement<
                                   ${page.pageIndex > 0
                                       ? renderPagerEntry({
                                             text: 'Newer',
-                                            icon: ArrowLeft24Icon,
+                                            icon: LucideArrowLeftIcon,
                                             targetPageIndex: page.pageIndex - 1,
                                             frontendState: inputs.frontendState,
                                             isRouteControlled,
@@ -152,7 +152,7 @@ export const VirBlogPostList = defineElement<
                                   ${page.pageIndex < page.pageCount - 1
                                       ? renderPagerEntry({
                                             text: 'Older',
-                                            icon: ArrowRight24Icon,
+                                            icon: LucideArrowRightIcon,
                                             showIconOnRight: true,
                                             targetPageIndex: page.pageIndex + 1,
                                             frontendState: inputs.frontendState,

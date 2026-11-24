@@ -2,14 +2,14 @@ import {assertWrap} from '@augment-vir/assert';
 import {type PartialWithUndefined} from '@augment-vir/common';
 import {asyncProp, css, defineElement, html, listen, renderAsync} from 'element-vir';
 import {
-    HorizontalAnchor,
-    MagnifyingGlass24Icon,
+    LucideSearchIcon,
+    PopoverAnchor,
     ViraError,
     viraFontCssVars,
     viraFormCssVars,
     ViraInput,
     ViraLink,
-    ViraPopUpTrigger,
+    ViraPopoverTrigger,
     viraShadows,
     viraTheme,
 } from 'vira';
@@ -46,7 +46,7 @@ export const VirBlogSearch = defineElement<{
             display: block;
         }
 
-        ${ViraPopUpTrigger} {
+        ${ViraPopoverTrigger} {
             width: 100%;
 
             & ${ViraInput} {
@@ -137,13 +137,13 @@ export const VirBlogSearch = defineElement<{
         const trimmedQuery = state.searchQuery.trim();
 
         return html`
-            <${ViraPopUpTrigger.assign({
-                horizontalAnchor: HorizontalAnchor.Right,
-                popUpOffset: {
+            <${ViraPopoverTrigger.assign({
+                popoverAnchor: PopoverAnchor.Right,
+                popoverOffset: {
                     vertical: 4,
                 },
             })}
-                ${listen(ViraPopUpTrigger.events.openChange, (event) => {
+                ${listen(ViraPopoverTrigger.events.openChange, (event) => {
                     if (!event.detail) {
                         updateState({
                             searchQuery: '',
@@ -154,10 +154,10 @@ export const VirBlogSearch = defineElement<{
                 <${ViraInput.assign({
                     value: state.searchQuery,
                     placeholder: 'Search posts',
-                    icon: MagnifyingGlass24Icon,
+                    icon: LucideSearchIcon,
                     showClearButton: true,
                 })}
-                    slot=${ViraPopUpTrigger.slotNames['vira-pop-up-trigger-trigger']}
+                    slot=${ViraPopoverTrigger.slotNames['vira-popover-trigger-trigger']}
                     ${listen(ViraInput.events.valueChange, (event) => {
                         updateState({
                             searchQuery: event.detail,
@@ -168,7 +168,7 @@ export const VirBlogSearch = defineElement<{
                     ? html`
                           <div
                               class="dropdown"
-                              slot=${ViraPopUpTrigger.slotNames['vira-pop-up-trigger-pop-up']}
+                              slot=${ViraPopoverTrigger.slotNames['vira-popover-trigger-popover']}
                           >
                               ${renderAsync(
                                   state.searchIndex,
@@ -196,7 +196,7 @@ export const VirBlogSearch = defineElement<{
                           </div>
                       `
                     : ''}
-            </${ViraPopUpTrigger}>
+            </${ViraPopoverTrigger}>
         `;
     },
 });
